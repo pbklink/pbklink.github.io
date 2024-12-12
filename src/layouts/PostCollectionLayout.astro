@@ -5,14 +5,26 @@ import { getCollection, type DataEntryMap } from 'astro:content';
 export interface Props {
     collection: keyof DataEntryMap;
     pageTitle: string,
+    filterTag?: string,
+    basePath?: string,
 };
-const { collection, pageTitle } = Astro.props;
+const { collection, pageTitle, filterTag, basePath } = Astro.props;
 
-const articles = await getCollection(collection);
+const articles = filterTag === undefined ? await getCollection(collection) : await getCollection(collection, ({ data }) => {
+    const dataTags = data.tags;
+    if (dataTags === undefined) {
+        return false;
+    } else {
+        return dataTags.includes(filterTag)
+    }
+});
+
 const sortedArticles = articles.sort((left, right) => right.data.date.valueOf() - left.data.date.valueOf());
 const shortDate = new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
 });
+
+const postBasePath = (basePath === undefined) ? './' : basePath;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -20,7 +32,7 @@ const shortDate = new Intl.DateTimeFormat("en-US", {
         {sortedArticles.map(post => (
             <li>
                 <div class="post">
-                    <a class="post-link" href={`./${post.id}/`}>{post.data.title}</a>
+                    <a class="post-link" href={`${postBasePath}${post.id}/`}>{post.data.title}</a>
                     <span class="post-date">{shortDate.format(post.data.date)}</span>
                     <span class="post-summary">{post.data.summary}</span>
                 </div>

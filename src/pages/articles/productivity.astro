@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-const title = 'Productivity';
+import PostCollectionLayout from '@layouts/PostCollectionLayout.astro';
+const title = 'Productivity Articles';
 ---
 
-<BaseLayout pageTitle={title}>
-</BaseLayout>
+<PostCollectionLayout pageTitle={title} collection='articles' filterTag='productivity' basePath='../' />

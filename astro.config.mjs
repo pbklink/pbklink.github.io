@@ -45,6 +45,7 @@ export default defineConfig({
       '/post/migrate-to-klink-au/': '/blog/migrate-to-klink-au/',
       '/post/website-fixed/': '/blog/website-fixed/',
       '/post/website-migrated-to-hugo/': '/blog/website-migrated-to-hugo/',
+      '/tags/productivity/': '/articles/productivity/',
   },
   
 
