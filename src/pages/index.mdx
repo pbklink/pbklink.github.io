@@ -1,0 +1,25 @@
+---
+layout: '@layouts/MarkdownPageLayout.astro'
+description: Paul Klink's Home Page
+title: Home
+---
+
+import Link from '@components/Link.astro';
+import * as articlesPage from './articles/index.astro';
+import * as productivityArticlesPage from './articles/productivity.astro';
+import * as blogPage from './blog/index.astro';
+import * as softwarePage from './software/index.mdx';
+import * as workPage from './work/index.mdx';
+
+
+Welcome to my corner of the Internet
+
+I live in Melbourne, Australia; am a father, a husband and manage a software firm specialising in real time trading systems. However, if I had the talent, I would have liked to become a musician/song writer.
+
+Some quick points:
+
+* **<Link url={workPage.url} text="Work" />** - my professional life
+* **<Link url={softwarePage.url} text="Software" />** - personal software projects
+* **<Link url={blogPage.url} text="Blog" />** - short form posts on items of interest to me
+* **<Link url={articlesPage.url} text="Articles" />** - longer form articles
+* **<Link url={productivityArticlesPage.url} text="Productivity" />** - articles on productivity

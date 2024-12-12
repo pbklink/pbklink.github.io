@@ -1,0 +1,122 @@
+---
+import Header from '../components/Header.astro';
+
+export interface Props {
+    pageTitle: string;
+};
+const { pageTitle } = Astro.props;
+
+const canonicalSite = 'https://paul.klink.au/';
+const canonicalURl = new URL(Astro.url.pathname, canonicalSite);
+const favIconPath = import.meta.env.BASE_URL + 'favicon.png';
+
+const narrowHeading = 'Paul Klink';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href={favIconPath} />
+        <link rel="canonical" href={canonicalURl} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <Header>
+            <span class="narrow-heading" slot="narrow-heading">{narrowHeading}</span>
+        </Header>
+
+        <div id="titleAndContent">
+            <h1>{pageTitle}</h1>
+            <slot />
+        </div>
+    </body>
+</html>
+
+<style>
+    html {
+        background-color: #f1f5f9;
+        color: black;
+        font-family: sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        margin: 1rem 0;
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+    h2 {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    body {
+        margin: 0 auto;
+        padding: 0;
+        font-size: calc(15px + 0.390625vw);
+    }
+
+
+    #titleAndContent {
+        width: 100%;
+        max-width: 80ch;
+        margin: 0 auto;
+        padding: 0 1rem;
+        line-height: 1.5;
+
+        /* Table */
+        table {
+            display: block;
+            overflow-x: auto;
+            border-collapse: collapse;
+
+            th,
+            td {
+                border: 1px solid darkslategrey;
+                padding: .3em;
+            }
+        }
+
+        .fullWidthImage {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Lists */
+        @media screen and (min-Width: 331px) and (max-width: 430px) {
+            ul {
+                padding-left: 1em;
+            }
+
+            li > p {
+                display: inline;
+            }
+        }
+
+        /* Lists */
+        @media screen and (max-width: 330px) {
+            li {
+                list-style-position: inside;
+            }
+
+            ul {
+                padding-left: 0;
+            }
+
+            li > p {
+                display: inline;
+            }
+        }
+    }
+
+    .narrow-heading {
+        font-size: small;
+    }
+</style>

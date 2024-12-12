@@ -1,0 +1,258 @@
+---
+layout: '@layouts/MarkdownPageLayout.astro'
+author: Paul Klink
+date: 2024-08-05
+title: Understanding R&D Subsidies - A software perspective
+tags: 
+- productivity
+summary: "Applying for a R&D subsidy for a software project is difficult if the subsidy requires that the 'scientific method' be used.  This article reviews the principles behind R&D subsidies and discusses the reasons why using 'scientific method' is not a good fit for subsidising R&D in software projects. However some times this is necessary, and the article then presents a R&D framework which attempts to find a suitable compromise between the 2 different methodologies."
+---
+
+import Link from '@components/Link.astro';
+import { Image } from 'astro:assets';
+import * as softwareStartupRDProcessPage from '../software-startup-rd-process/index.mdx';
+import softwareResearchImage from './_conceptual-research-with-keyboard-magnifier-wooden-cubes-black-desk-background-flat-lay-horizontal-image.webp';
+
+<Image src={softwareResearchImage} alt="Software research" class="fullWidthImage"/>
+
+# R&D tax relief
+
+Many countries in the world subsidise R&D expenditure carried out in their local economy.  A lot do this by providing tax incentives to firms undertaking research and development.  The OECD estimates that the amount of tax relief provided to firms as a proportion of GDP increased approximately 3 fold from 2000 to 2020: from 0.04% to 0.12%[^1].
+
+Australia provides one of the most generous tax incentive schemes.  For example, small companies can receive up to 43.5 per cent either as cash back, or a tax offset, on R&D spending, depending on whether the company made a profit in the financial year[^2].  Yet despite this, Australia’s R&D expenditure as a proportion of GDP has approximately fallen from 2.25% to 1.68% across the period 2009 to 2022[^3].  In 2024, this proportion is approximately 1 percentage point lower than the OECD average.
+
+# My experience with R&D subsidy applications
+
+While there are many papers which discuss R&D and associated subsidies at a macro level, this article provides a personal perspective of undertaking software R&D and applying for the tax incentive.  I have previously been involved with 2 applications and am currently commencing a third project for which I also intend to make an application.  However, the previous applications were subpar.  The first application was subject to an audit which initially determined that the application did not meet the guidelines.  We argued that the project itself was eligible however the application was poorly framed.  We were given the chance to resubmit a ‘reframed’ application which was eventually approved by [AusIndustry](https://www.industry.gov.au/science-technology-and-innovation/industry-innovation/ausindustry) (who review it for technical eligibility) and [ATO](https://www.ato.gov.au/) (who review it for financial eligibility).  The second application has been reviewed as part of its registration and we have received feedback advising that our internal processes may not have sufficiently followed the specified “systematic progression of work” eligibility requirement.  AusIndustry requires that core activities use the scientific method (hypothesis, experiment, observation, evaluation, conclusion) to create new knowledge.  Our internal processes seemed to be too software like.
+
+The first 2 applications were done in conjunction with R&D consultants who reviewed our projects and prepared the submissions on our behalf.  However, for the 3rd project I have decided to develop my own understanding of R&D to better incorporate R&D into our internal processes.  So far I have found this both surprisingly difficult but also very enlightening.  Merging the scientific method into our internal processes in a sensible fashion requires ‘out of the square’ thinking.  However this leads to new insight as to how to approach innovation.  Our firm, [Xilytix](https://xilytix.com), a small software startup, is now 3 months into this project and, while I cannot talk about the project itself, I can share how we are addressing using the scientific method in our software project.
+
+# Creative Destruction
+
+Firstly, let’s review why governments subsidise research and development.
+
+While it is easy to find articles discussing R&D and innovation, it is hard to find any discussing why these are actually good for the economy and why governments subsidise these.  Many generalise about innovation improving productivity and providing an economic competitive advantage.  A [CSIRO](https://www.csiro.au/) [report](https://www.csiro.au/en/work-with-us/services/consultancy-strategic-advice-services/CSIRO-futures/Innovation-Business-Growth/Quantifying-Australias-returns-to-innovation)[^4] in 2021 estimated that for each dollar a government invested in R&D, the economy received a return of $3.50.  That is a phenomenal 350% return.  But what generates this return? 
+
+A deeper investigation suggests that this is due to [creative destruction](https://en.wikipedia.org/wiki/Creative_destruction)[^5].  This is an economic concept where new innovations replace older innovations.  It is also referred to as Schumpeterian theory, named after the [Austrian economist](https://en.wikipedia.org/wiki/Joseph_Schumpeter) who derived this theory in 1942 from the works of [Karl Marx](https://en.wikipedia.org/wiki/Karl_Marx).  While Marx’s writings around this, centred on the destruction of capital needed to sustain capitalism, nowadays it is considered as the vital energy which drives capitalism.
+
+Simplistically, creative destruction is about firms developing new innovations that lead to better, cheaper and more desirable products and services.  If other suppliers, or even industries, cannot match these innovations, they go out of business (hence destruction).  If managed correctly, creative destruction drives growth in the economy and increases wealth in society.  However in the process, it not only threatens firms, but also workers’ jobs, wages and skills[^6].  Maybe that is why the link between innovation and creative destruction is avoided as it highlights the disruptive nature of innovations - a topic which some people, especially politicians, would like to avoid.
+
+# Ideas & Spillover
+
+Innovation is very much associated with new ideas.  In economics, the world is often divided into capital and labor.  However in 1990, [Romer](https://en.wikipedia.org/wiki/Paul_Romer) divided it into ideas and objects (everything else)[^7].  The key difference between these is that an object can only be used by only one person at a time, whereas an idea is nonrivalrous, meaning that at any one time, it can be used by an unlimited number of people.
+
+The nonrivalrous nature of ideas means that other parties can benefit from the creation of a new idea.  This is known as “spillover” (or more accurately, positive externality, however spillover sounds more intuitive).  For example if you make a pizza (an object), you can eat it yourself and gain all the benefits of making it.  However if you create the idea of a flat piece of dough with various toppings cooked in an oven, other people can use this idea and also benefit from it.
+
+Spillover has both benefits and drawbacks in the economy.  It is beneficial in that new innovative ideas that improve society can easily spread from the originator to other parties.  The other parties do not even need to know how the idea was implemented - just that it is possible.  This greatly reduces their risk in creating their own implementation of the idea and the economy benefits by having resultant productivity improvements becoming more accessible.
+
+The down side is that not being able to keep all the benefits of a new idea can deter companies from generating innovations with them in the first place.  Once other companies become aware of them, they can create their own implementation of the idea.  Intellectual Property only protects implementations of ideas - not the ideas themselves.  Patents may help but are difficult to obtain for software[^8].  So firms that innovate need to factor in the substantial risks of loss of benefits due to spillover.
+
+The first R&D Tax incentive project I was involved highlights aspects of spillover.  It was for an API driven onboarding platform for an [ASX](https://www.asx.com.au/) broker.  This broker was targeting low cost broking with specialisation in technology services such as APIs for traders and advisers.  We realised that the greatest cost to this business model was the onboarding of traders and investors (users).  At that time, onboarding was an intensive manual process complicated by the interactive steps required for compliance and, that the nature of the financial information requested, was frequently not understood by users. We estimated that one person could onboard no more than 8 users per day.  Our aim was to automate this with APIs so that one person can onboard at least 200 users per day.
+
+This project was successfully implemented and, after running for a year, was onboarding thousands of users per day.  Unfortunately our client decided to change direction to become a full service broker and switched to another supplier for onboarding services.  We were not able to find another client for our TotalView system and had to shut it down.  However by that time, we had demonstrated to the industry the feasibility and advantages of automating onboarding with the use of APIs.
+
+The R&D grant we received for this project somewhat compensated us for this spillover, and from AusIndustry’s point of view, the Australian economy also benefited as we introduced this productivity improvement into the industry.
+
+Interestingly, at the time of this R&D Tax Incentive application (2016), the AusIndustry website had numerous mentions of spillover and this was part of its guidelines to eligibility.  In 2024, I have noticed that there is no longer any mention of spillover.  This is probably a good idea as their focus is to encourage firms to perform more R&D and spillover is actually a discouragement towards this end.
+
+# Imperfect competition
+
+Competition within an industry has a large impact on the level of R&D undertaken by firms.  A graph showing the relationship between level of competition (x-axis) and R&D undertaken by firms (y-axis) has an inverted “U” shape with most R&D undertaken in the middle of the range of competition levels[^6].  Modelling has also shown that perfect competition leads to low levels of R&D[^7], as the resultant low margins, provide firms with little scope to carry out R&D.  So imperfect competition is needed for high levels of R&D.
+
+Patents provide companies with relief from competition to encourage innovation.  Likewise, R&D subsidies allow firms to purse innovation which otherwise could not be funded due to lack of margin in competitive environments.
+
+# Additionality
+
+The aim of R&D subsidies is to increase firm’s R&D activities and innovativeness.  Typically their effectiveness is measured by comparing the extent of this increase against a baseline where no subsidy was provided.   This measure is called additionality.
+
+Additionality can be measured in different ways.  Three common types of additionality are[^9]:
+* Input
+* Output
+* Behaviour
+
+**INPUT** additionality is the most common and straightforward way of measuring additionality.  It compares the amount firms invest in R&D with and without a subsidy with the equation:
+```
+Additionality = (Amount invested with subsidy - Amount invested without subsidy) / Cost of subsidy
+```
+
+A subsidy is effective if the additionality is greater than 1.  If it is less than 1, then the subsidy is considered to be “crowding out” private investment in R&D as it is replacing R&D investment a firm would have taken on without the subsidy.
+
+The additionality of the current subsidy in Australia has been estimated to be 1.9[^10].  That is, for each one dollar a subsidy provides, a firm will invest $1.90.
+
+**OUTPUT** additionality compares the amount of innovation generated by firms with and without an R&D subsidy.  Studies normally use quantity of patents as a proxy for innovation when measuring output.  However this is a coarse measurement as significant amounts of innovation don’t result in patents (especially in software) and it does not account for other innovation related benefits such as technology diffusion, knowledge exchange and spillover.
+
+**BEHAVIOUR** additionality focuses on a firm’s improvements to its R&D skills and capabilities.  R&D is often not an innate skill in firms and individuals.  It needs to be learnt, supported by infrastructure and, ideally, continuously improved.  The improvements can be measured by changes in how firms manage R&D: its confidence and faith in R&D, the extent of knowledge acquisition and sharing, the level of integration of R&D into internal processes and the level of R&D skills in managers and staff.
+
+Ideally, subsidies should place a heavy focus on behaviour additionality within firms with little previous experience in R&D, as behaviour additionality is a precursor to input and output additionality.  It is also critical to firms sustaining their investment in R&D - a true success indicator of a subsidy program.
+
+In my experience, the current Australian R&D subsidy does not promote behaviour additionality and may, in some cases, work against it.  This will be further explored in the rest of this article.
+
+# Science based and engineering based firms
+
+How subsidies impact additionality in different types of firms is explored in a [study](https://doi.org/10.1080/14479338.2021.2015356)[^9] by Marianne Steinmo, Thomas Lauvås and Einar Rasmussen.  This study categorised firms as either science or engineering based firms.
+
+Science based firms focus on developing new technologies using scientific breakthroughs.  They develop core knowledge in pursuit of breakthroughs, normally in close association with academic environments and often with multiple research partners. Their R&D projects are of longer nature and innovation continues through to prototypes and and lead to several products after.  Subsidies are often needed for firms to commence R&D projects and they appear to  increase knowledge development and innovation and enhance strategic use of R&D.  Biotechnology firms typically fall into this category.
+
+Engineering based firms focus more on market opportunities and use R&D to develop technology targeting these opportunities (application-specific technology).  Their innovation is more incremental and used to improve technology and processes to solve particular problems - often related to cost reduction.  As a consequence, their development of new knowledge is more focused on their existing domain.  If they have research partners, they tend to continue using the one same partner.  The study reports that firms would have undertaken R&D activities even without subsidy but with less scope and at a slower pace.   Subsidies also had the effect of providing a clearer R&D focus with greater credibility, and also increasing collaboration within the firm.
+
+For both science and engineering firms, subsidies generated behaviour additionality.  These additionalities are more likely greater in small, young, and technologically specialised firms.
+
+The software R&D projects I have been involved in are far more aligned with the use of R&D within engineering based firms however with some attributes of science base firms.  Like engineering firms, they were targeted at market opportunities and innovation was used to lower process costs.  For example, TotalView performed the same operations as were previously manually carried out but at a fraction of the cost.  This innovation opened up new opportunities for our client to scale its business and the rest of the industry eventually followed (creative destruction).
+
+New knowledge developed for TotalView was less tangible as it was based upon:
+
+* A synthesis of existing knowledge which was novel within the domain context.  For example, to allow clients to track the progress of onboarding, we developed a pipelined based API.  This itself was not new knowledge however it was novel in the context of being applied to CHESS and banking in Australia.
+* Managing the complexity of developing and integrating the numerous elements needed for TotalView.  Complexity is probably the greatest risk factor in any software innovation and higher levels of complexity require greater resourcing.
+
+Whether this knowledge is related to R&D or the normal software development methodology is debatable.  However what cannot disputed is that the overall product developed with all these items of knowledge is innovative.  The idiom: “greater than the sum of its parts” seems to apply here.
+
+TotalView has similarities with R&D projects in science based companies in that we only really knew if it worked when the “prototype” (in our case, beta) was tested by the customer.  The overall hypothesis covering the innovation behind this project could only be verified once the customer confirmed that it was good enough to replace their existing manual systems.
+
+# Knowledge sourcing
+
+The acquisition of new knowledge is nearly always a prerequisite of innovation.  A [study](https://journals.sagepub.com/doi/full/10.1177/2340944420933629)[^11] by Afcha and Lucena shows that R&D subsidies encourage knowledge sourcing, and this in turn, increases innovation.
+
+In our current project, we have followed R&D methodology more so than in the my previous 2 R&D projects.  As a consequence, I have found we have done a far greater amount of knowledge searching and learning.  As a result, we have identified more innovations to incorporate into our product and our business plan has a stronger and clearer focus.
+
+However so far we have only undertaken internal knowledge sourcing.  External knowledge sourcing such as R&D partnerships/alliances, technology in-licensing and R&D outsourcing, provides greater opportunity for knowledge acquisition but requires more sophisticated R&D skills.  For example, knowledge networks[^12], knowledge sharing[^13] and knowledge proximity[^14].
+
+Knowledge sourcing differentiates R&D from other many other types of development and engineering activities.  R&D subsidies encourage firms to build up their knowledge sourcing skills, and so provide significant behavioural additionality on top of the input additionality.
+
+# Scientific Method
+
+In Australia, AusIndustry tackles input additionality by only subsidising activities which[^15]:
+
+* Generate new knowledge using the scientific method (hypothesis, experiment, observation, evaluation, conclusion).  New knowledge is defined as knowledge that a competent individual cannot know in advance.  (*Core activities*)
+* Directly support core activities.  (*Supporting activities*)
+
+While this approach may work well for science based companies, it is difficult to follow in software (and probably engineering based) companies pursuing innovation.  The reasons for this are:
+
+1. In science, a hypothesis shown to be false by experimentation generates new knowledge which is of value and assists with subsequent hypotheses.  In software, information gained from a failed hypothesis is of far less value and is most likely discarded.
+1. The fact that experiments fail is factored into funding of science based companies.  Software companies are far less likely to have experiment failures factored into their funding.
+1. Accordingly, a software company will create hypotheses that are far more likely to be proven correct.  This leads to a conundrum where a hypothesis would lack [falsifiability](https://en.wikipedia.org/wiki/Falsifiability) - however falsifiability is one of the primary features of a hypothesis.
+1. The scientific method is difficult to use when the need for new knowledge is not clearly known beforehand.  Due to the complexity of software projects, unexpected new knowledge is often generated as part of the development process.  For example, in the TotalView project we decided to use a database architecture with a high level of abstraction to provide flexibility.  However this architecture caused significant scaling and maintenance problems which required large workarounds.  Our architect was competent and very skilled so the knowledge gained from solving this problem certainly can be considered as new knowledge.  While the knowledge itself is may not directly deliver creative destruction, it is a important part of developing the product that does.
+1. The largest problem with specifying the scientific method is that it is difficult to map or merge with methodologies used for software development.  This means it is not easily adopted and learnt by the team leading to very low behaviour additionality.
+
+However the reality is that AusIndustry needs clear guidelines for eligibility of activities and has chosen using the Scientific Method as the basis for eligibility.  The rest of this articles explores how a R&D software project can be structured to meet these eligibility requirements, however in a way that makes sense to the team and generates behavioural additionality.
+
+# R&D Plan
+
+Planning is the key to many things.  I believe that creating a R&D Plan will both lead to effective use of R&D in a project, and also greatly assist in demonstrating the R&D worthiness of a project in the event of a R&D subsidy audit.
+
+I gained experience in planning when I worked for a large defence contractor in their software standards compliance department.  The department was responsible for ensuring that sub contractors followed defence standards ([DOD-STD-2167A](https://en.wikipedia.org/wiki/DOD-STD-2167A)) when developing software.  Prior to this position, I had no experience in either defence or software compliance when they reviewed my resume for another job.  However I was skilled in [SCADA](https://en.wikipedia.org/wiki/SCADA) technology and grew up in a German community in Australia (don’t ask) which is what they were looking for.  So I was offered this role.
+
+My boss was an old hand at defence software development and trained me.  However I felt uneasy when he described how he previously wrote software development plans for defence projects.  He would shut himself in his office for several days and write the plan making sure that it met the requirements of the standard.  After getting the required sign-offs, it was then ready for delivery to the client (Department of Defence).
+
+This did not seem right to me.  Surely the Department of Defence was not primarily paying for the document, but rather to ensure adequate planning was undertaken.  This would require meetings and discussions within the team(s), getting input from other stakeholders and ensuring all members understand how the development would proceed.  The document itself would be generated from the outcome of these activities.
+
+As I got to know my boss better, I realised he understood all this but was quite practical about it.  The company already had their internal development processes that could be relied on.  The document was not needed internally.  So his approach meant that they could get paid for this deliverable early and then continue with development according to their internal methods.
+
+The reason for this reminiscence is that I believe AusIndustry encourages a similar behaviour to that of my boss.  This is due to the difficulty in mapping their R&D methodology onto internal software processes.  Because of this mismatch, it is not integrated into a firms normal internal processes.  Instead, a R&D specialist (possibly a consultant) temporarily steps in to identify the R&D performed and prepares the submission for a subsidy (similar to my boss creating a plan independently of the team).  As a consequence, the R&D skills largely remain with the specialist with little transferred to the firm and its staff. This lack of skill transfer stifles the growth of an R&D understanding, ethos and possibly culture within the firm.
+
+The solution to this is to create a R&D plan internally.  By involving staff, awareness of R&D will grow and provide the skills to better generate innovation.
+
+My view on what content should be included in the document is:
+
+* A description of the overall product or service being developed.
+* A detailed description of the innovative elements of the overall product or service being developed.  This should highlight the creative destruction aspects of these innovations and also identify potential spillovers.
+* An analysis of the types of knowledge that will be required for the project and how this will be sourced.  Any use of external sourcing should be highlighted.
+* The use of training and learning to develop the skills needed to create the innovations
+* A list and description of the core and supporting activities.
+
+The plan should serve the dual purposes of steering the use of R&D within the project and being able to demonstrate compliance with R&D subsidy requirements.  It may be beneficial to engage an R&D consultant to assist with this planning as they can provide advice as to how R&D is best integrated into internal processes while being compliant with subsidy requirements.
+
+# Core and Supporting activities
+
+The hardest part of creating a R&D plan for a software project is identifying R&D core activities.  Contextual new knowledge tends to be incremental in nature and gained by solving problems encountered during development and without the need for significant experimentation.  For this reason and also since the need for this knowledge is not known beforehand, it is hard to consider it as core.
+
+The following techniques can be used to address this and identify R&D core activities:
+
+* Review the design and architecture to identify subsystems whose behaviour could be considered as new knowledge within the context of the product domain and promote the development of that to a core activity.  For example, TotalView’s use of a pipelined API to onboard users in Australia’s CHESS system and banks.
+* Carry out some research to find innovations which supplement the overall innovation of the product.  Treat the development of these supplemental innovations as a core activity.  Interestingly, when I used this technique in our current R&D project at Xilytix, I found that these supplemental innovations significantly improved the overall product and its degree of innovation.
+
+Create hypotheses for the items of new knowledge and supplemental innovations around which these core activities are centred.  The falsifiability of these hypotheses will probably be low however that is to be expected due to the engineering nature of this R&D.
+
+For each hypothesis, the corresponding experiment, observation, evaluation, conclusion can be mapped onto software test procedures and test results.  Ensure these are formally carried out and well documented.
+
+An innovation or new knowledge may require separate testing to cover different aspects. For example, testing a sub-system to confirm a technical outcome hypothesis, or testing user interaction with a prototype to confirm a usage hypothesis outcome.  In this case, create separate core activities to cover each aspect; each with its own hypothesis and corresponding testing.
+
+Once the core activities are defined, the next step is to identify all supporting activities associated with the core activities.  This should include:
+
+* R&D planning
+* Research and knowledge sourcing activities
+* Training and learning activities for new skills directly needed to develop the software required to test the hypotheses.
+* Development of software required to test the hypotheses
+* Testing the hypotheses.
+
+The scope of the supporting activities will most likely far exceed the scope of the core activities.  Their coverage of the project will depend on the number of core activities identified.  Ideally, for a new product or service, the core and supporting activities will cover the development of a prototype, or beta version, that can be used to test the overall innovation identified in the R&D plan.
+
+# Record keeping
+
+AusIndustry expects firms to keep records which demonstrate the R&D eligibility of core and supporting activities[^16]. In addition to emails and design documentation, for our current R&D at Xilytix, we are keeping the following R&D specific records:
+
+1. **R&D Plan**\
+To identify the new (in context) knowledge and innovations being sought and describe the structured approach to generating these.
+1. **Test documentation for core activity hypotheses**\
+To demonstrate the systematic approach to confirming the hypotheses associated with core activities
+1. **Internet browsing history**\
+To demonstrate internal research undertaken to find innovation and confirm that the sought new knowledge and innovations do not already exist elsewhere.  Note that this information is conveniently stored in web browsers.  It can be exported with tools such as [BrowsingHistoryView](https://www.nirsoft.net/utils/browsing_history_view.html). (Make sure it is not cleared before exporting.)
+1. **External Knowledge Sourcing**\
+Records of communications and/or visits with external knowledge sources and all agreements relating to external knowledge sourcing.
+1. **Timesheets and diary**\
+It is important for all staff to record time spent on core and supporting activities.  In addition, it is also helpful for staff members to include notes describing the nature of work carried out in the time spent.  It is highly desirable for these times to be recorded frequently - ideally daily - as AusIndustry expects contemporaneous records.  There are many online timesheet applications which can be used for this task.  However at Xilytix we ended up choosing [YouTrack](https://www.jetbrains.com/youtrack/).  While this is primarily an issue tracking application, by treating issues as activities we found it an ideal solution for our time spent recording.
+
+# Summary
+
+In summary, my view on how to carry out R&D within a software project which both, makes sense to the software team and, (hopefully) will also be acceptable for an R&D subsidy in Australia is:
+
+1. Learn the fundamentals of R&D.
+1. Write a R&D plan with the involvement of the development team which describes the overall innovation and knowledge sourcing and training needed as for the project.
+1. Identify core activities by reviewing architecture and design for new (within context) knowledge and searching for supplemental innovations.
+1. Create hypotheses for the core activities and map corresponding experiment, observation, evaluation, conclusion onto software test activities.  Ensure these are well documented.
+1. Ensure that the core and resultant supporting activities reasonably scope the project (through to prototype/beta).
+1. Record knowledge sourcing activities.  Using browser history is a convenient way of recording research carried out on the internet.
+1. Use a timesheet application which allows all members to record time spent on individual core and supporting activities.  Encourage members to update this frequently and include diary notes on what was done daily.
+
+The documentation from the above steps should contain most of the information needed to generate an R&D Tax incentive application and hopefully be sufficient to justify the application if an audit arises.  It may be helpful to get a R&D consultant to assist with the above steps. To properly gain the benefits of R&D, it is important that R&D consultants only assist and not do it on your behalf.
+
+Is the above approach “gaming the system”?  I don’t think so.  It may not exactly meet AusIndustry’s eligibility requirements but I believe it meets its purpose and intent.  It is important to remember that the ultimate purpose of the subsidy is to encourage firms to generate creative destruction - not new knowledge.  The aim of the subsidies is to assist firms with:
+
+* developing R&D skills such as knowledge sourcing which they can combine with their internal expertise, creativity and knowledge of markets to identify and create innovation that leads to creative destruction, (behaviour additionality)
+* funding to provide confidence to invest in and proceed with high risk innovation R&D projects involving experimentation and complex development. (input additionality)
+
+The above is best achieved if R&D can be integrated into a firm’s processes in a manner which makes sense to firm’s staff and project team members.  Only then can a R&D ethos and culture grow within a firm.
+
+# Just a hypothesis
+
+If this article, was trying to sell you something, I’d finish off with Caveat Emptor.  However I’m not!  I am just looking for a R&D framework that makes sense to me, feels right for Xilytix and hopefully will be accepted by AusIndustry and ATO as a way of undertaking R&D as part of a Tax Incentive application.
+
+Please note that, in respect to this framework, I have had no interaction with these government agencies and in no way should anyone infer that they in anyway approve of this approach.  In some ways, this is a (possibly expensive) R&D Tax Incentive experiment:
+
+* **Hypothesis**: AusIndustry and ATO will accept a R&D Tax Incentive application for innovative software projects which undertake R&D as described above.
+* **Experiment**: Use the above R&D framework for a software project and submit a R&D Tax Incentive application which is based around this framework.
+* **Observation**: See if the application is accepted or if we are audited!
+
+I will follow up with another article to report any observations.  However any feedback - especially related to organising R&D and/or how to best submit applications for R&D subsidies - would be greatly appreciated.
+
+© Paul Klink 2024: No AI Training[^17]
+
+**Related post**: <Link url={softwareStartupRDProcessPage.url} text="Software startup R&D process" />
+
+[^1]: Accounting Times: [Australia’s R&D tax incentives among world's most generous: OECD](https://www.accountingtimes.com.au/tax/australia-s-r-d-tax-incentives-among-worlds-most-generous-oecd)
+[^2]: Rimon: [How RDTI Franking Debits Work](https://www.rimon.com.au/blog/rd-tax-incentive-affect-on-company-franking-account-rimon-advisory)
+[^3]: Group of Eight: [Go8 Roadmap to lift Australia’s R&D intensity to 3% of GDP](https://go8.edu.au/go8-roadmap-to-lift-australias-rd-intensity-to-3-of-gdp)
+[^4]: CSIRO: [Quantifying Australia's returns to innovation](https://www.csiro.au/en/work-with-us/services/consultancy-strategic-advice-services/CSIRO-futures/Innovation-Business-Growth/Quantifying-Australias-returns-to-innovation)
+[^5]: Wikipedia: [Creative destruction](https://en.wikipedia.org/wiki/Creative_destruction)
+[^6]: Akcigit and Van Reenen: [The Economics of Creative Destruction](https://www.production.hup.harvard.edu/file/feeds/PDF/9780674270367_sample.pdf)
+[^7]: Charles I. Jones: [Paul Romer: Ideas, Nonrivalry, and Endogenous Growth](https://web.stanford.edu/~chadj/RomerNobel.pdf)
+[^8]: Hall, Mairesse and Mohnen: [Measuring the Returns to R&D](https://eml.berkeley.edu/~bhhall/papers/HallMairesseMohnen09_rndsurvey_HEI.pdf)
+[^9]: Steinmo, Lauvås and Rasmussen: [How R&D subsidies alter firm activities and behaviour](https://doi.org/10.1080/14479338.2021.2015356)
+[^10]: Thomson and Skali: [The Additionality of R&D Tax Policy in Australia](https://www.industry.gov.au/sites/default/files/May%202018/document/extra/research-and-development-tax-incentive-review-report-rate-of-additionality-swinburne.pdf)
+[^11]: Afcha and Lucena: [The effectiveness of R&D subsidies in fostering firm innovation: The role of knowledge-sourcing activities](https://journals.sagepub.com/doi/full/10.1177/2340944420933629)
+[^12]: Wang, Chen and Fang: [A critical view of knowledge networks and innovation performance: The mediation role of firms' knowledge integration capability](https://doi.org/10.1016/j.jbusres.2018.03.034)
+[^13]: Castaneda and  Cuellar: [Knowledge sharing and innovation: A systematic review](https://doi.org/10.1002/kpm.1637)
+[^14]: Davids and Frenken: [Proximity, knowledge base and the innovation process: towards an integrated framework](https://doi.org/10.1080/00343404.2017.1287349)
+[^15]: AusIndustry: [Assess if your R&D activities are eligible for the R&D Tax Incentive](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/assess-if-your-randd-activities-are-eligible)
+[^16]: AusIndustry: [Keeping records as evidence of your R&D activities](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/assess-if-your-randd-activities-are-eligible/#keeping-records-as-evidence)
+[^17]: *No AI Training\
+Without in any way limiting the copyright holder’s exclusive rights under copyright, any use of this publication to “train” generative artificial intelligence (AI) technologies to generate text is expressly prohibited. The author reserves all rights to license uses of this work for generative AI training and development of machine learning language models.*

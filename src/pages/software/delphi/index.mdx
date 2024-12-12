@@ -1,0 +1,14 @@
+---
+layout: '@layouts/MarkdownPageLayout.astro'
+date: 2017-01-29
+title: Delphi
+---
+
+import Link from '@components/Link.astro';
+import * as actionUpdateInActiveXPage from './action-update-in-active-x.md';
+import * as debuggingIsapiWithIisExpressPage from './debugging-isapi-with-iis-express.md';
+import * as improvedRadioGroupPage from './improved-radio-group.md';
+
+* <Link url={improvedRadioGroupPage.url} text="Improved Radio Group" />
+* <Link url={actionUpdateInActiveXPage.url} text="Action Update in ActiveX" />
+* <Link url={debuggingIsapiWithIisExpressPage.url} text="Debugging ISAPI Web Applications with IIS Express" />
