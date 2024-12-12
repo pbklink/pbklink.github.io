@@ -11,19 +11,19 @@ export default defineConfig({
   trailingSlash: 'always',
 
   redirects: {
-      // '/Music/index.html': '/music/', // Will not compile went built on Windows due to case insensitive file match
+      '/Music/index.html': '/music/', // Will not compile went built on Windows due to case insensitive file match
       '/Music/SailorJim.html': '/music/sailor-jim/',
-      // '/Music/montage/index.html': '/music/montage/', // Will not compile went built on Windows due to case insensitive file match
-      // '/Music/montage/bio/index.html': '/music/montage/bio/', // Will not compile went built on Windows due to case insensitive file match
+      '/Music/montage/index.html': '/music/montage/', // Will not compile went built on Windows due to case insensitive file match
+      '/Music/montage/bio/index.html': '/music/montage/bio/', // Will not compile went built on Windows due to case insensitive file match
       '/Music/montage/songs.html': '/music/montage/songs/',
-      // '/Software/index.html': '/software/', // Will not compile went built on Windows due to case insensitive file match
+      '/Software/index.html': '/software/', // Will not compile went built on Windows due to case insensitive file match
       '/Software/FieldedText/index.html': '/software/fielded-text/',
-      // '/Software/Delphi/index.html': 'software/delphi/', // Will not compile went built on Windows due to case insensitive file match
+      '/Software/Delphi/index.html': 'software/delphi/', // Will not compile went built on Windows due to case insensitive file match
       '/Software/Delphi/ActionUpdateInActiveX.htm': '/software/delphi/action-update-in-active-x/',
       '/Software/Delphi/DebuggingIsapiWithIisExpress.htm': '/software/delphi/debugging-isapi-with-iis-express/',
       '/Software/Delphi/DebuggingIsapiWithIisExpress': '/software/delphi/debugging-isapi-with-iis-express/',
       '/Software/Delphi/ImprovedRadioGroup.htm': '/software/delphi/improved-radio-group/',
-      // '/Software/Retab/index.html': '/software/retab/', // Will not compile went built on Windows due to case insensitive file match
+      '/Software/Retab/index.html': '/software/retab/', // Will not compile went built on Windows due to case insensitive file match
       '/Software/Retab/Retab.pdf': '/software/retab/retab.pdf',
       '/software/fielded-text/c-sharp-library/examples/index.html': '/software/fielded-text/c-sharp-library/examples/',
       '/c-sharp-library/examples/write_headings.html': '/c-sharp-library/examples/csharp-writing-of-csv-file-including-headings/',
