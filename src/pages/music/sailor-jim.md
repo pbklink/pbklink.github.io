@@ -1,6 +1,5 @@
 ---
 layout: '@layouts/MarkdownPageLayout.astro'
-date: 2017-01-30
 description: Sailor Jim Song
 title: Sailor Jim
 ---
@@ -9,11 +8,9 @@ title: Sailor Jim
 
 Well actually it was first written in around 1987. However it never got much further than a melody line and some lyrics. During 2004, I finally got around to producing and finished the production in 2005. 
 
-This was my first serious effort at producing a song.  I learnt a lot - especially that it takes a lot of work.  Hopefully the next one does not take this long.
+This was my first serious effort at producing a song.  I learnt a lot - especially that it takes a lot of work.
 
-### Download
-
-[MP3](http://www.soundclick.com/bands/pagemusic.cfm?bandID=307388) (from SoundClick)  (6.6 MB) 
+[Stream](https://soundclick.com/share.cfm?id=2229519) (from SoundClick) 
 
 ### Lyrics
 
