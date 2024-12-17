@@ -84,9 +84,3 @@ Keyboard
 
 Sound Card
 : Sound Blaster Audigy
-
-Sound Fonts
-: 
-* SGM150 v1.40.sf2 from [Shan's SF Website](http://www.geocities.jp/shansoundfont/)
-* Guitar Set.sf2 from [HammerSound Website](http://www.hammersound.net/)
-* GuitarSetPasisHeavyAndClean.rar from [HammerSound Website](http://www.hammersound.net/)
