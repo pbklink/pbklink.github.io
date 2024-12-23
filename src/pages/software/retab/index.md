@@ -10,4 +10,4 @@ I wrote this a long time ago when I had a printer which printed out tabs as 8 sp
 
 This program is free!  The source code has been released to public domain (Open Source) so feel free to use it however you like.  You can download it from the [Retab project](http://sourceforge.net/projects/retab) at [SourceForge](http://www.sourceforge.net/).
 
-If you just want to see what it does, you can read the [user manual](./_retab.pdf).    
+If you just want to see what it does, you can read the [user manual](/files/retab.pdf).

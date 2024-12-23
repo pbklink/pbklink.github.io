@@ -24,7 +24,7 @@ export default defineConfig({
       '/Software/Delphi/DebuggingIsapiWithIisExpress': '/software/delphi/debugging-isapi-with-iis-express/',
       '/Software/Delphi/ImprovedRadioGroup.htm': '/software/delphi/improved-radio-group/',
       '/Software/Retab/index.html': '/software/retab/', // Will not compile went built on Windows due to case insensitive file match
-      '/Software/Retab/Retab.pdf': '/software/retab/retab.pdf',
+      '/Software/Retab/Retab.pdf': '/files/retab.pdf',
       '/software/fielded-text/': '/software/fielded-text',
       '/software/fielded-text/c-sharp-library/': '/software/fielded-text/c-sharp-library',
       '/software/fielded-text/c-sharp-library/examples/': '/software/fielded-text/c-sharp-library/examples',
