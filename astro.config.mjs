@@ -63,7 +63,7 @@ export default defineConfig({
       '/post/software-startup-rd-process/': '/articles/software-startup-rd-process/',
       '/post/understanding-rd-subsidies/': '/articles/understanding-rd-subsidies/',
       '/post/university-competition-exporting-skills-or-improving-domestic-skills/': '/articles/university-competition-exporting-skills-or-improving-domestic-skills/',
-      '/post/connecting-novation-impulse-keyboard-to-studio-one/': '/blog/Connecting Novation Impulse keyboard to Studio One/',
+      '/post/connecting-novation-impulse-keyboard-to-studio-one/': '/blog/connecting-novation-impulse-keyboard-to-studio-one/',
       '/post/opposite-of-monopoly/': '/blog/opposite-of-monopoly/',
       '/post/change-theme-to-personal-web/': '/blog/change-theme-to-personal-web/',
       '/post/excel-2016-rtd/': '/blog/excel-2016-rtd/',
