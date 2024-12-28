@@ -2,7 +2,7 @@
 layout: '@layouts/MarkdownPageLayout.astro'
 date: 2024-01-15
 title: Connecting Novation Impulse keyboard to Studio One
-summary: "I use a Novation Impulse61 keyboard with PreSonus Studio one.  Every now and then, I need to fix up the connectivity between my keyboard and Studio One.  This blog post is to remind me of how it is done."
+summary: "I use a Novation Impulse 61 keyboard with PreSonus Studio one.  Every now and then, I need to fix up the connectivity between my keyboard and Studio One.  This blog post is to remind me of how it is done."
 ---
 
 import { Image } from 'astro:assets';
@@ -11,13 +11,17 @@ import impulseExternalDeviceImage from './_studio-one-impulse-novation-impulse-e
 import impulse61ExternalDevicesImage from './_studio-one-impulse61-external-devices.png';
 
 
-My keyboard has been updated with the [HUI firmware update](https://support.novationmusic.com/hc/en-gb/articles/360009516479-What-does-the-HUI-update-for-the-Impulse-do-) so I do not have to use [Novation Automap].  There is [an article](https://support.novationmusic.com/hc/en-gb/articles/360014213299-How-to-setup-Studio-One-with-the-Impulse-HUI-firmware-update) on the Novation website describing how to connect an Impulse keyboard to Studio One, however it only covers the HUI connection (that allows using the knobs and controls on the keyboard to control Studio one).  The article does not cover connecting getting midi input into tracks.
+My keyboard has been updated with the [HUI firmware update](https://support.novationmusic.com/hc/en-gb/articles/360009516479-What-does-the-HUI-update-for-the-Impulse-do-) so I do not have to use Novation Automap.  There is [an article](https://support.novationmusic.com/hc/en-gb/articles/360014213299-How-to-setup-Studio-One-with-the-Impulse-HUI-firmware-update) on the Novation website describing how to connect an Impulse keyboard to Studio One, however it only covers the HUI connection (that allows using the knobs and controls on the keyboard to control Studio one).  The article does not cover connecting getting midi input into tracks.
+
+## USB Driver
+
+Make sure the USB driver for the Novation Impulse keyboard is installed.  This can be downloaded from: [https://downloads.novationmusic.com/novation/impulse/](https://downloads.novationmusic.com/novation/impulse/)
 
 ## Devices
 
 You need to add 2 external devices to Studio One to connect an Impulse keyboard (Studio One | Options | External Devices | Add...).
 1. Mackie | HUI device\
-This is covered in the above Novation [article](https://support.novationmusic.com/hc/en-gb/articles/360014213299-How-to-setup-Studio-One-with-the-Impulse-HUI-firmware-update).
+This is covered in the above Novation [article](https://support.novationmusic.com/hc/en-gb/articles/360014213299-How-to-setup-Studio-One-with-the-Impulse-HUI-firmware-update).  Note that the settings for Windows differ from those in the screenshots.
 2. A generic new keyboard for the Novation Keyboard\
 Select `New Keyboard` from top of Add Device list and enter Manufacturer `Novation` and set the Device Name to the keyboard model - eg `Impulse61`.
 
