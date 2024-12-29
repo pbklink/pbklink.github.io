@@ -5,7 +5,7 @@ description: Montage Biography
 title: Montage Bio
 ---
 
-import { Image } from 'astro:assets';
+import MaxWidthImage from '@components/MaxWidthImage.astro';
 import montageArticleImage from './_montage-article.jpg';
 import montageBandImage from './_montage-band.jpg';
 
@@ -24,5 +24,5 @@ Paul Klink                              | Bass guitar, keyboard
 Montage display a range of styles and moods and dare to venture into unchartered original sound. With influences from reggae to rock, blues and classical, it is not too hard to appreciate their diversity.
 
 ### Images
-<Image src={montageBandImage} alt="The Band" />
-<Image src={montageArticleImage} alt="Flyer" />
+<MaxWidthImage src={montageBandImage} alt="The Band" />
+<MaxWidthImage src={montageArticleImage} alt="Flyer" />

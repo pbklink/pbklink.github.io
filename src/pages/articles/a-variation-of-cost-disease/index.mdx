@@ -8,12 +8,12 @@ tags:
   - productivity
 ---
 
-import { Image } from 'astro:assets';
+import MaxWidthImage from '@components/MaxWidthImage.astro';
 import usEmploymentImage from './_US_Employment.jpeg';
 
 In the long run, a society’s prosperity is dependent on productivity growth.  One of the conundrums societies face in respect to this is, that as economies become more advanced, they become dominated by industries with low productivity growth.  This is best seen in the growth of service industries, which mostly have low productivity growth. The following chart[^1] shows this domination by comparing US employment in service producing industries against employment in goods producing industries.
 
-<Image src={usEmploymentImage} alt="Goods vs service employment in US" />
+<MaxWidthImage src={usEmploymentImage} alt="Goods vs service employment in US" />
 
 The Baumol effect - or more colloquially, cost disease - is a theory that offers an explanation to this above phenomenon.  Its main postulates are:
 1. As wages rise in high productivity industries they must also rise in low productivity industries in order for them to retain or attract workers.  
