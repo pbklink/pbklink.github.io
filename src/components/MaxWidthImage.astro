@@ -4,15 +4,17 @@ import { Image } from 'astro:assets';
 interface Props {
     src: ImageMetadata;
     alt: string;
+    quality?: 'low' | 'mid' | 'high' | 'max';
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, quality } = Astro.props;
 ---
 
 <Image
   class="maxWidth"
   src={src}
   alt={alt}
+  quality={quality}
 />
 
 <style>
