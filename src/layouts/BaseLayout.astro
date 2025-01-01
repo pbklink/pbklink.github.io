@@ -2,9 +2,11 @@
 import Header from '../components/Header.astro';
 
 export interface Props {
+    class?: string;
     pageTitle: string;
+    rest?: unknown;
 };
-const { pageTitle } = Astro.props;
+const { class: classNames, pageTitle, ...rest } = Astro.props;
 
 const canonicalSite = 'https://paul.klink.au/';
 const canonicalURl = new URL(Astro.url.pathname, canonicalSite);
@@ -28,7 +30,7 @@ const narrowHeading = 'Paul Klink';
             <span class="narrow-heading" slot="narrow-heading">{narrowHeading}</span>
         </Header>
 
-        <div class="titleAndContent">
+        <div class:list={['title-and-content', classNames]} {...rest}>
             <h1>{pageTitle}</h1>
             <slot />
         </div>
@@ -64,7 +66,7 @@ const narrowHeading = 'Paul Klink';
     }
 
 
-    div.titleAndContent {
+    .title-and-content {
         width: 100%;
         max-width: 80ch;
         margin: 0 auto;
