@@ -4,13 +4,18 @@ description: Sailor Jim Song
 title: Sailor Jim
 ---
 
-### Written 2004/2005 
+In a ship, in a storm, far from home and family.  This is a song of how a love can span seas and be driving force to overcome storms and other obstacles that keep a man from his loved ones.
 
-Well actually it was first written in around 1987. However it never got much further than a melody line and some lyrics. During 2004, I finally got around to producing and finished the production in 2005. 
+Many years ago I started when I was playing in a band called [Montage](../montage/), I had the basic idea for this song.  However before the band fell apart before I could develop it.
+
+At the start of 2004, I got myself some music DAW software and used this song to learn how to use the software.  I discovered that it takes a lot of work.
 
 This was my first serious effort at producing a song.  I learnt a lot - especially that it takes a lot of work.
 
-[Stream](https://soundclick.com/share.cfm?id=2229519) (from SoundClick) 
+Listen:
+* [Spotify](https://open.spotify.com/album/69CL3CXgDxY9S70OTHp1gu)
+* [iTunes (UK)](https://itunes.apple.com/gb/album/id1806373251?app=itunes)
+* [Apple Music (UK)](https://itunes.apple.com/gb/album/id1806373251)
 
 ### Lyrics
 
