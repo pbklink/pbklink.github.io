@@ -5,6 +5,11 @@ import sitemap from '@astrojs/sitemap';
 
 import mdx from '@astrojs/mdx';
 
+const canonicalHost = 'paul.klink.au'; // Put into environmental variable for BaseLayout
+
+export const githubHost = 'pbklink.github.io';
+export const githubSite = `https://${githubHost}`;
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://paul.klink.au',
@@ -73,9 +78,22 @@ export default defineConfig({
       '/post/website-migrated-to-hugo/': '/blog/website-migrated-to-hugo/',
       '/tags/productivity/': '/articles/productivity/',
   },
-  
 
-  integrations: [sitemap(), mdx()],
+
+  integrations: [
+    sitemap({
+      // Change sitemap URLs to use custom host supplied to GitHub.
+      serialize(item) {
+        const url = new URL(item.url);
+        if (url.host === githubHost) {
+            url.host = canonicalHost;
+        }
+        item.url = url.href;
+        return item;
+      },    
+    }),
+    mdx()
+  ],
 
   experimental: {
     svg: true,
