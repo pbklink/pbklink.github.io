@@ -13,6 +13,7 @@ At the start of 2004, I got myself some music DAW software and used this song to
 This was my first serious effort at producing a song.  I learnt a lot - especially that it takes a lot of work.
 
 Listen:
+* [YouTube](https://www.youtube.com/watch?v=WzGxjQe1gXI) (no subscription required)
 * [Spotify](https://open.spotify.com/album/69CL3CXgDxY9S70OTHp1gu)
 * [iTunes (UK)](https://itunes.apple.com/gb/album/id1806373251?app=itunes)
 * [Apple Music (UK)](https://itunes.apple.com/gb/album/id1806373251)
