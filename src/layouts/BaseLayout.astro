@@ -4,14 +4,19 @@ import Header from '../components/Header.astro';
 export interface Props {
     class?: string;
     pageTitle: string;
+    pubDate?: string;
     rest?: unknown;
 };
-const { class: classNames, pageTitle, ...rest } = Astro.props;
+const { class: classNames, pageTitle, pubDate, ...rest } = Astro.props;
 
 const canonicalHost = 'paul.klink.au'; // Defined in Astro Config. In future get this from environmental variable
 const canonicalSite = `https://${canonicalHost}/`;
 const canonicalURl = new URL(Astro.url.pathname, canonicalSite);
 const favIconPath = import.meta.env.BASE_URL + 'favicon.png';
+
+const shortDate = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "medium",
+});
 
 const narrowHeading = 'Paul Klink';
 ---
@@ -32,7 +37,15 @@ const narrowHeading = 'Paul Klink';
         </Header>
 
         <div class:list={['title-and-content', classNames]} {...rest}>
-            <h1>{pageTitle}</h1>
+            {pubDate
+                ? 
+                    <div class="title-with-date">
+                        <h1>{pageTitle}</h1>
+                        <span class="pub-date">{shortDate.format(new Date(pubDate))}</span>
+                    </div>
+                : <h1>{pageTitle}</h1>
+            }
+            
             <slot />
         </div>
     </body>
@@ -122,5 +135,16 @@ const narrowHeading = 'Paul Klink';
 
     .narrow-heading {
         font-size: small;
+    }
+
+    .title-with-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.3rem;
+
+        .pub-date {
+            font-size: small;
+        }
     }
 </style>
