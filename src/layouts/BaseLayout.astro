@@ -51,7 +51,9 @@ const narrowHeading = 'Paul Klink';
     </body>
 </html>
 
-<style>
+<style lang="scss">
+    @use '/src/styles/scss/main-menu-config';
+
     html {
         background-color: #f1f5f9;
         color: black;
@@ -138,10 +140,11 @@ const narrowHeading = 'Paul Klink';
     }
 
     .title-with-date {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.3rem;
+        @media screen and (width >= main-menu-config.$narrow-breakpoint) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         .pub-date {
             font-size: small;
