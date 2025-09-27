@@ -6,6 +6,7 @@ const postsSchema = z.object({
     date: z.date(),
     summary: z.string(),
     tags: z.array(z.string()).optional(),
+    draft: z.boolean().optional(),
 });
 
 const blog = defineCollection({

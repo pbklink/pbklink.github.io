@@ -10,12 +10,16 @@ export interface Props {
 };
 const { collection, pageTitle, filterTag, basePath } = Astro.props;
 
-const articles = filterTag === undefined ? await getCollection(collection) : await getCollection(collection, ({ data }) => {
+const articles = await getCollection(collection, ({ data }) => {
     const dataTags = data.tags;
-    if (dataTags === undefined) {
+    if (dataTags === undefined || data.summary === '') {
         return false;
     } else {
-        return dataTags.includes(filterTag)
+        if (filterTag === undefined) {
+            return true;
+        } else {
+            return dataTags.includes(filterTag)
+        }
     }
 });
 

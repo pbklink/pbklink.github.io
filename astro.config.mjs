@@ -90,7 +90,11 @@ export default defineConfig({
         }
         item.url = url.href;
         return item;
-      },    
+      },
+      filter(pageUrl) {
+        // Exclude draft articles from sitemap
+        return !pageUrl.toLowerCase().includes('draft');
+      }
     }),
     mdx()
   ],
