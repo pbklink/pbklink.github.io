@@ -79,7 +79,6 @@ export default defineConfig({
       '/tags/productivity/': '/articles/productivity/',
   },
 
-
   integrations: [
     sitemap({
       // Change sitemap URLs to use custom host supplied to GitHub.
@@ -98,8 +97,4 @@ export default defineConfig({
     }),
     mdx()
   ],
-
-  experimental: {
-    svg: true,
-  },
 });
