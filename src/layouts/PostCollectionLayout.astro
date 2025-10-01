@@ -12,10 +12,10 @@ const { collection, pageTitle, filterTag, basePath } = Astro.props;
 
 const articles = await getCollection(collection, ({ data }) => {
     const dataTags = data.tags;
-    if (dataTags === undefined || data.summary === '') {
-        return false;
+    if (data.summary === '') {
+        return false; // Can use to hide from summary page
     } else {
-        if (filterTag === undefined) {
+        if (dataTags === undefined || filterTag === undefined) {
             return true;
         } else {
             return dataTags.includes(filterTag)
