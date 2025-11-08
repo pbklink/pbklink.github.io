@@ -12,15 +12,16 @@ At the start of 2004, I got myself some music DAW software and used this song to
 
 This was my first serious effort at producing a song.  I learnt a lot - especially that it takes a lot of work.
 
-Listen:
-* [YouTube](https://www.youtube.com/watch?v=WzGxjQe1gXI) (no subscription required)
-* [Spotify](https://open.spotify.com/album/69CL3CXgDxY9S70OTHp1gu)
-* [iTunes (UK)](https://itunes.apple.com/gb/album/id1806373251?app=itunes)
-* [Apple Music (UK)](https://itunes.apple.com/gb/album/id1806373251)
+## Listen
 
-### Lyrics
+Select a music service (<small>Select YouTube if you do not have a subscription</small>):
 
-```
+* [Spotify, Apple, YouTube, Deezer, Tidal, Amazon, KKBox, Anghami](https://paulklink.ffm.to/sailorjim)
+* [SoundCloud](https://soundcloud.com/paulklink-music)
+
+## Lyrics
+
+```text
 Sailor Jim, look to the wind. 
 See the clouds, they're blowing in. 
 Drop your anchor in safe shelter, 
@@ -82,7 +83,7 @@ that the seas they won't keep us apart.
 
 The following tools were used to create this song:
 
-Software Sequencer 
+Software Sequencer
 : Cakewalk Sonar 3
 
 Keyboard

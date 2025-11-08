@@ -2,9 +2,12 @@
 interface Props {
     url: string;
     text: string;
+    downloadFileName?: boolean;
 }
 
-const { url, text } = Astro.props;
+const { url, text, downloadFileName } = Astro.props;
 ---
-
-<a href={url}>{text}</a>
+{downloadFileName
+    ? <a href={url} download={downloadFileName}>{text}</a>
+    : <a href={url}>{text}</a>
+}
