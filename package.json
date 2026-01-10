@@ -14,6 +14,10 @@
     "@astrojs/sitemap": "^3.2.1",
     "@pbkware/astro-main-menu": "^3.0.1",
     "astro": "^5.15.3",
-    "sass": "^1.93.3"
+    "sass": "^1.97.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
