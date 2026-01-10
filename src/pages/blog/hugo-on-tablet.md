@@ -14,6 +14,6 @@ This tablet has a stylus. During my travelling with the tablet I started using t
 
 Maybe this would be a better medium for writing posts!
 
-l found this [post](https://gist.github.com/bep/a0d8a26cf6b4f8bc992729b8e50b480b) which showed how you can run Hugo on Android. I already had Termux installed. Also had a nice text editor (QuickEditPro).  And my website was in a Git repository. Looks like this approach was meant for me.
+l found this [post](https://gist.github.com/bep/a0d8a26cf6b4f8bc992729b8e50b480b) which showed how you can run Hugo on Android. I already had Termux installed. Also had a nice text editor (QuickEditPro). And my website was in a Git repository. Looks like this approach was meant for me.
 
 So here is my first post written on my Android tablet (with a stylus). The big question is: Will this encourage me to write more?

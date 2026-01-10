@@ -2,11 +2,11 @@
 import Header from '../components/Header.astro';
 
 export interface Props {
-    class?: string;
-    pageTitle: string;
-    pubDate?: string;
-    rest?: unknown;
-};
+  class?: string;
+  pageTitle: string;
+  pubDate?: string;
+  rest?: unknown;
+}
 const { class: classNames, pageTitle, pubDate, ...rest } = Astro.props;
 
 const canonicalHost = 'paul.klink.au'; // Defined in Astro Config. In future get this from environmental variable
@@ -14,142 +14,166 @@ const canonicalSite = `https://${canonicalHost}/`;
 const canonicalURl = new URL(Astro.url.pathname, canonicalSite);
 const favIconPath = import.meta.env.BASE_URL + 'favicon.png';
 
-const shortDate = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
+const shortDate = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'medium',
 });
 
 const narrowHeading = 'Paul Klink';
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/png" href={favIconPath} />
-        <link rel="canonical" href={canonicalURl} />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Header>
-            <span class="narrow-heading" slot="narrow-heading">{narrowHeading}</span>
-        </Header>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href={favIconPath}
+    />
+    <link
+      rel="canonical"
+      href={canonicalURl}
+    />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header>
+      <span
+        class="narrow-heading"
+        slot="narrow-heading"
+        >{narrowHeading}</span
+      >
+    </Header>
 
-        <div class:list={['title-and-content', classNames]} {...rest}>
-            {pubDate
-                ? 
-                    <div class="title-with-date">
-                        <h1>{pageTitle}</h1>
-                        <span class="pub-date">{shortDate.format(new Date(pubDate))}</span>
-                    </div>
-                : <h1>{pageTitle}</h1>
-            }
-            
-            <slot />
-        </div>
-    </body>
+    <div
+      class:list={['title-and-content', classNames]}
+      {...rest}
+    >
+      {
+        pubDate ? (
+          <div class="title-with-date">
+            <h1>{pageTitle}</h1>
+            <span class="pub-date">{shortDate.format(new Date(pubDate))}</span>
+          </div>
+        ) : (
+          <h1>{pageTitle}</h1>
+        )
+      }
+
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style lang="scss">
-    @use '/src/styles/scss/main-menu-config';
+  @use '/src/styles/scss/main-menu-config';
 
-    html {
-        background-color: #f1f5f9;
-        color: black;
-        font-family: sans-serif;
+  html {
+    background-color: #f1f5f9;
+    color: black;
+    font-family: sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    margin: 1.5rem auto;
+    font-size: 3rem;
+    line-height: 1.1;
+    display: block;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  body {
+    margin: 0 auto;
+    padding: 0;
+    font-size: calc(15px + 0.390625vw);
+  }
+
+  .title-and-content {
+    width: 100%;
+    max-width: 80ch;
+    margin: 0 auto;
+    padding: 0 1rem;
+    line-height: 1.5;
+
+    /* Table */
+    table {
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid darkslategrey;
+        padding: 0.3em;
+      }
     }
 
-    * {
-        box-sizing: border-box;
+    /* For SVG only */
+    .fullWidthImage {
+      width: 100%;
+      height: auto;
     }
 
-    h1 {
-        margin: 1.5rem auto;
-        font-size: 3rem;
-        line-height: 1.1;
-        display: block;
-        text-align: center;
+    /* Lists */
+    @media screen and (min-width: 331px) and (max-width: 430px) {
+      ul {
+        padding-left: 1em;
+      }
+
+      li > p {
+        display: inline;
+      }
     }
 
-    h2 {
-        margin: 1rem 0;
-        font-size: 1.5rem;
+    /* Lists */
+    @media screen and (max-width: 330px) {
+      li {
+        list-style-position: inside;
+      }
+
+      ul {
+        padding-left: 0;
+      }
+
+      li > p {
+        display: inline;
+      }
+    }
+  }
+
+  .narrow-heading {
+    font-size: small;
+  }
+
+  .title-with-date {
+    @media screen and (width >= main-menu-config.$narrow-breakpoint) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    body {
-        margin: 0 auto;
-        padding: 0;
-        font-size: calc(15px + 0.390625vw);
+    .pub-date {
+      font-size: small;
     }
-
-
-    .title-and-content {
-        width: 100%;
-        max-width: 80ch;
-        margin: 0 auto;
-        padding: 0 1rem;
-        line-height: 1.5;
-
-        /* Table */
-        table {
-            display: block;
-            overflow-x: auto;
-            border-collapse: collapse;
-
-            th,
-            td {
-                border: 1px solid darkslategrey;
-                padding: .3em;
-            }
-        }
-
-        /* For SVG only */
-        .fullWidthImage {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Lists */
-        @media screen and (min-Width: 331px) and (max-width: 430px) {
-            ul {
-                padding-left: 1em;
-            }
-
-            li > p {
-                display: inline;
-            }
-        }
-
-        /* Lists */
-        @media screen and (max-width: 330px) {
-            li {
-                list-style-position: inside;
-            }
-
-            ul {
-                padding-left: 0;
-            }
-
-            li > p {
-                display: inline;
-            }
-        }
-    }
-
-    .narrow-heading {
-        font-size: small;
-    }
-
-    .title-with-date {
-        @media screen and (width >= main-menu-config.$narrow-breakpoint) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .pub-date {
-            font-size: small;
-        }
-    }
+  }
 </style>

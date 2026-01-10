@@ -6,7 +6,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@public/*": ["public/*"],
+      "@public/*": ["public/*"]
     },
     "allowJs": true // required, and included with all Astro templates
   },

@@ -40,4 +40,4 @@ function HandleForegroundIdleHook(Code: Integer;
 end;
 ```
 
-*Dont forget to 'unhook' when the ActiveX server shuts down*
+_Dont forget to 'unhook' when the ActiveX server shuts down_

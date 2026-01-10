@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = ({ redirect }) => {
-    return redirect('https://pbkware.klink.au/fielded-text/ftvalid/', 301);
-}
+  return redirect('https://pbkware.klink.au/fielded-text/ftvalid/', 301);
+};

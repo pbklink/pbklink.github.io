@@ -3,74 +3,81 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { getCollection, type DataEntryMap } from 'astro:content';
 
 export interface Props {
-    collection: keyof DataEntryMap;
-    pageTitle: string,
-    filterTag?: string,
-    basePath?: string,
-};
+  collection: keyof DataEntryMap;
+  pageTitle: string;
+  filterTag?: string;
+  basePath?: string;
+}
 const { collection, pageTitle, filterTag, basePath } = Astro.props;
 
 const articles = await getCollection(collection, ({ data }) => {
-    const dataTags = data.tags;
-    if (data.summary === '') {
-        return false; // Can use to hide from summary page
+  const dataTags = data.tags;
+  if (data.summary === '') {
+    return false; // Can use to hide from summary page
+  } else {
+    if (dataTags === undefined || filterTag === undefined) {
+      return true;
     } else {
-        if (dataTags === undefined || filterTag === undefined) {
-            return true;
-        } else {
-            return dataTags.includes(filterTag)
-        }
+      return dataTags.includes(filterTag);
     }
+  }
 });
 
 const sortedArticles = articles.sort((left, right) => right.data.date.valueOf() - left.data.date.valueOf());
-const shortDate = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
+const shortDate = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'medium',
 });
 
-const postBasePath = (basePath === undefined) ? './' : basePath;
+const postBasePath = basePath === undefined ? './' : basePath;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <ul>
-        {sortedArticles.map(post => (
-            <li>
-                <div class="post">
-                    <a class="post-link" href={`${postBasePath}${post.id}/`}>{post.data.title}</a>
-                    <span class="post-date">{shortDate.format(post.data.date)}</span>
-                    <span class="post-summary">{post.data.summary}</span>
-                </div>
-            </li>
-        ))}
-    </ul>
+  <ul>
+    {
+      sortedArticles.map((post) => (
+        <li>
+          <div class="post">
+            <a
+              class="post-link"
+              href={`${postBasePath}${post.id}/`}
+            >
+              {post.data.title}
+            </a>
+            <span class="post-date">{shortDate.format(post.data.date)}</span>
+            <span class="post-summary">{post.data.summary}</span>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
 
 <style>
-    .post {
-        display: grid;
-        grid-template-columns: 1fr max-content;
-        grid-template-rows: auto auto;
-        column-gap: 1em;
-    }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: auto auto;
+    column-gap: 1em;
+  }
 
-    .post-link {
-        grid-column: 1;
-        grid-row: 1;
-        font-size: larger;
-        align-self: center;
-    }
+  .post-link {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: larger;
+    align-self: center;
+  }
 
-    .post-date {
-        grid-column: 2;
-        grid-row: 1;
-        align-self: center;
-        font-size: smaller;
-        font-style: italic;
-    }
+  .post-date {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    font-size: smaller;
+    font-style: italic;
+  }
 
-    .post-summary {
-        grid-column: 1 / 3;
-        grid-row: 2;
-        font-size: smaller;
-    }
+  .post-summary {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    font-size: smaller;
+  }
 </style>

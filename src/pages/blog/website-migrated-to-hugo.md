@@ -8,9 +8,9 @@ summary: This website has now been migrated to the Hugo website framework.
 
 This website has now been migrated to the Hugo website framework. This move was done for several reasons:
 
-* The previous website creation software was no longer being actively developed
-* It also did not support responsive design. You had to create 2 separate pages for desktop and mobile.
-* It had limited support for blogs.
+- The previous website creation software was no longer being actively developed
+- It also did not support responsive design. You had to create 2 separate pages for desktop and mobile.
+- It had limited support for blogs.
 
 The move was triggered by my desire to be more active in publishing information on my website. Since the previous package was no longer being developed, I investigated alternatives. I liked the idea of a static web site generator and Hugo seemed to best meet my needs.
 

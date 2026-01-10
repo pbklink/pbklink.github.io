@@ -2,11 +2,11 @@
 import { Image } from 'astro:assets';
 
 interface Props {
-    src: ImageMetadata;
-    alt: string;
-    quality?: 'low' | 'mid' | 'high' | 'max';
-    maxHeight?: string;
-    center?: boolean;
+  src: ImageMetadata;
+  alt: string;
+  quality?: 'low' | 'mid' | 'high' | 'max';
+  maxHeight?: string;
+  center?: boolean;
 }
 
 const { src, alt, quality, maxHeight, center } = Astro.props;
@@ -24,17 +24,20 @@ const { src, alt, quality, maxHeight, center } = Astro.props;
   }}
 />
 
-<style lang="scss" define:vars={{
+<style
+  lang="scss"
+  define:vars={{
     maxHeight: '10em',
     display: center ? 'block' : undefined,
     margin: center ? '0 auto' : undefined,
-}}>
-    .maxWidth {
-        max-width: 100%;
-        height: auto;
-        max-height: var(--maxHeight);
-        display: var(--display);
-        margin: var(--margin);
-        width: auto;
-    }
+  }}
+>
+  .maxWidth {
+    max-width: 100%;
+    height: auto;
+    max-height: var(--maxHeight);
+    display: var(--display);
+    margin: var(--margin);
+    width: auto;
+  }
 </style>

@@ -3,36 +3,39 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout class="title-and-content" pageTitle={frontmatter.title}>
-    <slot />
+<BaseLayout
+  class="title-and-content"
+  pageTitle={frontmatter.title}
+>
+  <slot />
 </BaseLayout>
 
 <style>
-    .title-and-content {
-        h1 {
-            line: 1;
-            margin: 0.2em 0 0.3em;
-        }
-
-        table {
-            th,
-            td {
-                border: 1px solid lightgrey;
-                padding: 0.05rem 0.1rem;
-            }
-
-            thead {
-                font-style: italic;
-                font-size: small;
-            }
-
-            tbody > tr > td:nth-child(1) {
-                line-height: 1.2;
-            }
-
-            tbody > tr > td:nth-child(2) {
-                font-size: x-small;
-            }
-        }
+  .title-and-content {
+    h1 {
+      line: 1;
+      margin: 0.2em 0 0.3em;
     }
+
+    table {
+      th,
+      td {
+        border: 1px solid lightgrey;
+        padding: 0.05rem 0.1rem;
+      }
+
+      thead {
+        font-style: italic;
+        font-size: small;
+      }
+
+      tbody > tr > td:nth-child(1) {
+        line-height: 1.2;
+      }
+
+      tbody > tr > td:nth-child(2) {
+        font-size: x-small;
+      }
+    }
+  }
 </style>

@@ -9,41 +9,42 @@ For a project I worked on, I needed a Radio Group component where I can focus on
 The code is below. Its a bit messy and not that well encapsulated but it works.
 
 Custom Component Unit:
+
 ```
-interface 
+interface
 
 type
-  TMyRadioGroup = class(TRadioGroup) 
+  TMyRadioGroup = class(TRadioGroup)
   private
     FSettingFocus: Boolean;
     function GetTopLeftButton: TRadioButton;
     function GetRadioButtonControl(ItemNr: Integer): TRadioButton;
   protected
     function CanModify: Boolean; override;
-  public 
-    procedure SetFocus; override; 
-  end; 
+  public
+    procedure SetFocus; override;
+  end;
 
 var
   MyComponents_FormActivating: Boolean = False;
-  MyComponents_ApplicationMinimised: Boolean = False; 
+  MyComponents_ApplicationMinimised: Boolean = False;
 
-implementation 
+implementation
 
 { TMyRadioGroup }
 
 function TMyRadioGroup.CanModify: Boolean;
 begin
-  Result := not FSettingFocus 
-            and 
-            Application.Active 
-            and 
-            not MyComponents_FormActivating 
-            and 
+  Result := not FSettingFocus
+            and
+            Application.Active
+            and
+            not MyComponents_FormActivating
+            and
             not MyComponents_ApplicationMinimised;
 end;
 
-function TMyRadioGroup.GetRadioButtonControl(ItemNr: Integer): TRadioButton; 
+function TMyRadioGroup.GetRadioButtonControl(ItemNr: Integer): TRadioButton;
 var
   I: Integer;
 begin
@@ -53,13 +54,13 @@ begin
     if Controls[I] is TRadioButton then
     begin
       if TRadioButton(Controls[I]).Caption = Items[ItemNr] then
-      begin 
-        Result := TRadioButton(Controls[I]); 
+      begin
+        Result := TRadioButton(Controls[I]);
         Break;
       end;
     end;
   end;
-end; 
+end;
 
 function TMyRadioGroup.GetTopLeftButton: TRadioButton;
 var I: Integer;
@@ -69,7 +70,7 @@ begin
   begin
     if Controls[I] is TRadioButton then
     begin
-      if not Assigned(Result) then 
+      if not Assigned(Result) then
         Result := TRadioButton(Controls[I])
       else
       begin
@@ -95,7 +96,7 @@ begin
     FocusButton := GetTopLeftButton;
 
   if Assigned(FocusButton) then
-  begin 
+  begin
     FSettingFocus := True;
     try
       FocusButton.SetFocus;
@@ -107,12 +108,13 @@ end;
 ```
 
 Form Unit:
+
 ```
 implementation
 
 procedure TMainForm.WndProc(var Message: TMessage);
 begin
-  if Message.Msg <> WM_ACTIVATE then 
+  if Message.Msg <> WM_ACTIVATE then
     inherited
   else
   begin

@@ -2,21 +2,21 @@ import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const postsSchema = z.object({
-    title: z.string(),
-    date: z.date(),
-    summary: z.string(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional(),
+  title: z.string(),
+  date: z.date(),
+  summary: z.string(),
+  tags: z.array(z.string()).optional(),
+  draft: z.boolean().optional(),
 });
 
 const blog = defineCollection({
-    loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/pages/blog' }),
-    schema: postsSchema,
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/pages/blog' }),
+  schema: postsSchema,
 });
 
 const articles = defineCollection({
-    loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/pages/articles' }),
-    schema: postsSchema,
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: './src/pages/articles' }),
+  schema: postsSchema,
 });
 
 // const musicPlayList = defineCollection({

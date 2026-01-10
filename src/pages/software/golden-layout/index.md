@@ -9,6 +9,6 @@ When I began work on Plxtra's [Motif](https://plxtra.org/overviews/front-ends/mo
 
 The existing issues did affect Motif, so I decided to rewrite this library in TypeScript and clean up the code base. Version 2 of the Golden Layout was released in early 2021. Over the next couple of years I was the main developer/maintainer and continued to improve it with various releases up to version 2.6.
 
-At the end of 2022, after an unpleasant encounter with the original developer of Golden Layout, I decided to step down as a maintainer.  Golden Layout now had the reliability and features needed by our trading terminal.
+At the end of 2022, after an unpleasant encounter with the original developer of Golden Layout, I decided to step down as a maintainer. Golden Layout now had the reliability and features needed by our trading terminal.
 
-I enjoyed working on Golden Layout and learned a lot.  However my interest was being drawn to other projects.
+I enjoyed working on Golden Layout and learned a lot. However my interest was being drawn to other projects.
