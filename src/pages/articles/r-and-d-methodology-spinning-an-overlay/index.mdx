@@ -1,0 +1,79 @@
+---
+layout: '@layouts/MarkdownPageLayout.astro'
+author: Paul Klink
+date: 2026-01-15
+title: 'R&D Methodology: Spinning an overlay'
+draft: true
+tags:
+  - productivity
+  - R&D
+summary: 'Summary - todo'
+---
+
+import Link from '@components/Link.astro';
+import * as understandingRDSubsidiesPage from '../understanding-rd-subsidies/index.mdx';
+
+## My experience
+
+In August 2024, I wrote, “<Link url={understandingRDSubsidiesPage.url} text="Understanding R&D Subsidies – A software perspective" />”, after being advised that the methodology used in our [RDTI](https://incentives.business.gov.au/) application was too software like. This previous article presented an methodology which tried to bridge software development and the scientific methodology required by RDTI applications.  Essentially it is an overlay methodology – one which could be overlaid over software development methodology to make it look like a scientific-like process. My plan was to utilise this methodology in a separate software based RDTI application and write up my experience.  And so I did.  This article explores my experience in this endeavour.
+
+In summary, it was a terrible experience.  I used it on a small R&D project; very innovative, it also failed – so it should have been easy to prepare an RDTI application for it.  However, I found it excruciatingly hard.  The problem was not the approach.  The problem was with me.
+
+I found it extremely hard to ‘spin’ the overlay.  It felt too much like lying.  I knew what I had to do, as I had observed R&D consultants similarly creating overlays on previous RDTI submissions.  Even then, I felt queasy about signing off on these submissions – despite the reassurances from the consultant that the application was legitimate.  I should have realised back then, that these consultants not only have the high level technical/engineering skills to understand what we are building, they also have creative writing skills to map our development processes onto the scientific method.  When it comes to writing, I have a very concrete style.  Good for communicating actualities – not so good for spinning.
+
+Upon realising this, it raised the question whether I should work on developing this skill.  Obviously, I don’t have to as I can fall back to using consultants.  However, it goes deeper than that.
+
+## Requirement for scientific method in software related R&D
+
+As discussed in the previous article, the basic problem here is that scientific methodology is a lousy fit for software development – including novel software development.  Software developers do not relate to it.  They have spent years honing their skills around software development methodologies.  They have become productive using these methodologies. They make sense to them. Using “scientific methodology” to develop software is far less productive.  It is very waterfall-like and documentation heavy.  Even worse it is bad for morale.  Nobody likes having to do their job in an inefficient manner (the idiom “hands tied behind your back” seems both appropriate and inappropriate).
+
+Yet to receive RDTI funding for a software project, [AusIndustry](https://business.gov.au/expertise-and-advice/ausindustry) requires that scientific methodology be used.  However, this does not seem to be a barrier for software companies claiming R&D expenditure. In 2022/23, Atlassian, a large Australian software company, [claimed over $220 million](https://www.smartcompany.com.au/tax/research-and-development-tax-incentive-rdti-ato-report-2022/).  I find it difficult to believe that Atlassian would use inefficient or unproductive software methodologies for their development processes.  So I assume they have their own approach to mapping their methodology onto an overlay which meets AusIndustry requirements (I could be wrong about this[^1]).  I suspect a similar situation for other Australian software companies making R&D expenditure claims.
+
+## Why allow overlays?
+
+So why does AusIndustry seemingly allow these companies to bypass the R&D claim criteria by using overlay methodologies?  I think the answer is that it is extremely hard to distinguish between software engineering and software R&D.  Some reasons for this are:
+
+* The formulation of algorithms represents only a tiny fraction of software development costs and limiting subsidies to this would provide little to no incentive.
+* Productivity improvement (one of the ultimate outputs of R&D) is not a useful criterion as most software (excluding games/entertainment) is developed to improve processes.
+* The use of engineering processes (for example working off specifications) is a possibility but that can easily be overcome by overlays and also leads to the perverse outcome of developments using poor engineering processes remain eligible.
+* In regards to being novel, because individual creativity is frequently an input into the development process, it is not that hard to find novel aspects in most development projects.
+
+So it looks like their answer to this predicament is to take an extreme position.  Development has to use scientific method; must be novel (heavy emphasis on algorithms); and lower cost cannot be used as a basis of novelty (weird as this is a fundamental driver of productivity gains).  I assume AusIndustry realise this is not a realistic position so they provide a lot of leniency in the enforcement of this criteria.  This gives them the latitude to apply it to flagrantly non-compliant applications (via audits) but still allow applications that suitably ‘smell’ of R&D to receive funding. The R&D consultant firms which assist companies with R&D applications, develop a feel of the extent of the leniency. To a large extent, they act as a regulatory intermediary that filters out applications which fall outside the bounds of the leniency.
+
+While the above sounds convoluted, it seems to work. Software companies doing R&D receive funding; R&D consultants receive their commission; the research lobby (universities etc) are mollified as scientific method is specified and AusIndustry gets its BERD ([Business Expenditure on R&D](https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Research_Papers/2024-25/Australias_RandD_and_innovation_metrics__an_explainer)).  Everyone wins!  Well — maybe not.  The ultimate winner should be the tax payer.  Let’s consider the following 3 downsides to the above process.
+
+## Problems with overlays
+
+### 1. Sub-par allocation of funding
+
+If software companies are receiving R&D funding based on the overlays they develop, the more expansive the overlay, the greater the funding.  The amount of funding received can become more dependent on the creativity of the application writer than the actual R&D done.  The more you spin, the more you receive.  Ideally, a well spun overlay can cover most of the engineering as well as the R&D.  This obviously favours companies with many years of experience in submitting R&D applications and have learnt to tune their overlays to take maximum advantage of the lenience in criteria.
+
+The uncertainty of meeting the criteria also greatly increases the fear of audits.  So companies with limited access to cash, avoid including R&D funding in their business plans due to the chance of failing an audit and not being able to repay the subsidy.  (An earlier company I worked in, made this decision after being audited.)  The irony here is that the companies who can afford to fail an audit, so are not held back by this fear, are probably not the optimum targets for R&D funding.
+
+### 2. Overstatement of BERD and reduced productivity growth
+
+The reason for subsidising R&D is because of its value to the economy (generates creative destruction and drives productivity improvement) and to overcome businesses’ reluctance to carry out R&D due to its high risk.  Ideally the R&D funding criteria should prevent funding low risk engineering activity which firms would have carried out without subsidy.  As discussed above, this reduces the effectiveness of the subsidy.
+
+In addition, this would lead to an overestimation of Australian BERD as (I assume), subsidised R&D contribute to calculation of BERD.  However this is now diluted with engineering that does not qualify as R&D.  While this may not be an issue for AusIndustry, whose remit is to maximise BERD, it probably does show up as reduced Australian productivity improvement.
+
+### 3. Reduces ability to retain R&D talent in Australia
+
+While we may measure the output of R&D in terms of intellectual property (eg. patents), I believe that the most important output is the improvement of R&D skills within Australian people.  This goes across the whole gamut of roles related to R&D such as: researchers, developers, engineers, managers, entrepreneurs and investors.  These are the people who not only make today’s R&D, but will also make tomorrow’s R&D – possibly supplanting their previous creations.
+
+The value of these skills are very important to companies.  While companies go to great lengths to protect their IP, if a competitor wants to develop similar IP, it is far easier for the competitor to induce [key R&D staff to work for them](https://medium.com/@mrsandelin/china-just-pulled-its-own-manhattan-project-and-no-one-saw-it-coming-90bda336fd15) with more attractive employment conditions.  Companies who do not sufficiently look after their R&D staff could find that their IP advantages simply walking out the door with resignations.
+
+The same applies to countries.  We subsidise R&D to build up these skills in people – hoping that they will generate further R&D in Australia.  However, if after they build these skills, they are more attracted to other countries’ R&D environments, then these skills are lost to Australia.  A significant amount of the subsidies used to develop these skills have not been used to Australia’s benefit.
+
+Obviously, there are many aspects to a decision as to whether an R&D person would choose to work in Australia or overseas.  Having faith in the government’s support of local R&D would be a factor to many people.  The problem with using overlay methodologies to gain funding is that there is a disconnect between the R&D criteria and the the actual R&D.  The R&D people have to live with this disconnect and maybe even sign off on it.  It distances the funding from R&D and makes it more an accounting/finance issue. In some ways government R&D policy is seen to be divorced from reality.   This may not be a big deal to many in the industry, however my experience with software developers is that many are quite principled and this does matter to them.  Quite likely, these principles are also in researchers and other R&D related roles.
+
+## Use R&D consultants
+
+Returning to the pragmatic, if you carry out software R&D, funding is likely a struggle. Your competitors most likely have applied for RDTI funding and it makes business sense to also apply.  Unless you are very experienced in this funding, my advice is do NOT do it yourself – ignore my previous article. The criteria is too opaque.  Instead, use an R&D consultant – they will have experience with the level of lenience allowed.
+
+The consultant will step you through creating an overlay as part of your submission.  It is a somewhat creative process that takes advantage of their experience of the lenience built into the RDTI criteria to maximise your funding.  Just go with the flow.  At some point you need to sign stating that the submission is accurate. Close your eyes or cross your fingers while signing, if you have to.  But what about getting audited? What about failing the audit and having to refund?  That’s a risk you will have to live with.  But then risk and R&D go hand in hand, so hopefully you do not lose sleep over it.
+
+## Policy Alternatives
+
+The above is both conjecture and based on my limited experience of submitting RDTI applications.  So take it with a grain-of-salt.  However, assuming that there are elements of truth to it, what are better policy alternatives?  This will be explored in my next 2 articles.
+
+[^1]: I have no knowledge of Atlassian internal processes and am not in any way, implying that they are doing anything wrong or making inappropriate R&D expenditure claims.
