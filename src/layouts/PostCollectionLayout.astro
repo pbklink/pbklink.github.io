@@ -11,14 +11,18 @@ export interface Props {
 const { collection, pageTitle, filterTag, basePath } = Astro.props;
 
 const articles = await getCollection(collection, ({ data }) => {
-  const dataTags = data.tags;
-  if (data.summary === '') {
-    return false; // Can use to hide from summary page
+  if (data.draft === true) {
+    return false;
   } else {
-    if (dataTags === undefined || filterTag === undefined) {
-      return true;
+    if (data.summary === '') {
+      return false; // Can use to hide from summary page
     } else {
-      return dataTags.includes(filterTag);
+      const dataTags = data.tags;
+      if (dataTags === undefined || filterTag === undefined) {
+        return true;
+      } else {
+        return dataTags.includes(filterTag);
+      }
     }
   }
 });
