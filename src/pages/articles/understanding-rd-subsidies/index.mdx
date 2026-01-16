@@ -10,8 +10,10 @@ summary: "Applying for a R&D subsidy for a software project is difficult if the 
 
 import Link from '@components/Link.astro';
 import MaxWidthImage from '@components/MaxWidthImage.astro';
+import * as spinningAnOverlayPage from '../r-and-d-methodology-spinning-an-overlay/index.mdx';
 import * as softwareStartupRDProcessPage from '../software-startup-rd-process/index.mdx';
 import softwareResearchImage from './_conceptual-research-with-keyboard-magnifier-wooden-cubes-black-desk-background-flat-lay-horizontal-image.webp';
+
 
 <MaxWidthImage
   src={softwareResearchImage}
@@ -166,78 +168,80 @@ My view on what content should be included in the document is:
 
 The plan should serve the dual purposes of steering the use of R&D within the project and being able to demonstrate compliance with R&D subsidy requirements. It may be beneficial to engage an R&D consultant to assist with this planning as they can provide advice as to how R&D is best integrated into internal processes while being compliant with subsidy requirements.
 
-# Core and Supporting activities
+*The rest of this article can be ignored. I tried the methodology below myself in an RDTI application and found it unsatisfactory.  This is discussed at <Link url={spinningAnOverlayPage.url} text="R&D Methodology: Spinning an overlay" />*
 
-The hardest part of creating a R&D plan for a software project is identifying R&D core activities. Contextual new knowledge tends to be incremental in nature and gained by solving problems encountered during development and without the need for significant experimentation. For this reason and also since the need for this knowledge is not known beforehand, it is hard to consider it as core.
+~~# Core and Supporting activities~~
 
-The following techniques can be used to address this and identify R&D core activities:
+~~The hardest part of creating a R&D plan for a software project is identifying R&D core activities. Contextual new knowledge tends to be incremental in nature and gained by solving problems encountered during development and without the need for significant experimentation. For this reason and also since the need for this knowledge is not known beforehand, it is hard to consider it as core.~~
 
-- Review the design and architecture to identify subsystems whose behaviour could be considered as new knowledge within the context of the product domain and promote the development of that to a core activity. For example, TotalView’s use of a pipelined API to onboard users in Australia’s CHESS system and banks.
-- Carry out some research to find innovations which supplement the overall innovation of the product. Treat the development of these supplemental innovations as a core activity. Interestingly, when I used this technique in our current R&D project at Xilytix, I found that these supplemental innovations significantly improved the overall product and its degree of innovation.
+~~The following techniques can be used to address this and identify R&D core activities:~~
 
-Create hypotheses for the items of new knowledge and supplemental innovations around which these core activities are centred. The falsifiability of these hypotheses will probably be low however that is to be expected due to the engineering nature of this R&D.
+~~- Review the design and architecture to identify subsystems whose behaviour could be considered as new knowledge within the context of the product domain and promote the development of that to a core activity. For example, TotalView’s use of a pipelined API to onboard users in Australia’s CHESS system and banks.~~
+~~- Carry out some research to find innovations which supplement the overall innovation of the product. Treat the development of these supplemental innovations as a core activity. Interestingly, when I used this technique in our current R&D project at Xilytix, I found that these supplemental innovations significantly improved the overall product and its degree of innovation.~~
 
-For each hypothesis, the corresponding experiment, observation, evaluation, conclusion can be mapped onto software test procedures and test results. Ensure these are formally carried out and well documented.
+~~Create hypotheses for the items of new knowledge and supplemental innovations around which these core activities are centred. The falsifiability of these hypotheses will probably be low however that is to be expected due to the engineering nature of this R&D.~~
 
-An innovation or new knowledge may require separate testing to cover different aspects. For example, testing a sub-system to confirm a technical outcome hypothesis, or testing user interaction with a prototype to confirm a usage hypothesis outcome. In this case, create separate core activities to cover each aspect; each with its own hypothesis and corresponding testing.
+~~For each hypothesis, the corresponding experiment, observation, evaluation, conclusion can be mapped onto software test procedures and test results. Ensure these are formally carried out and well documented.~~
 
-Once the core activities are defined, the next step is to identify all supporting activities associated with the core activities. This should include:
+~~An innovation or new knowledge may require separate testing to cover different aspects. For example, testing a sub-system to confirm a technical outcome hypothesis, or testing user interaction with a prototype to confirm a usage hypothesis outcome. In this case, create separate core activities to cover each aspect; each with its own hypothesis and corresponding testing.~~
 
-- R&D planning
-- Research and knowledge sourcing activities
-- Training and learning activities for new skills directly needed to develop the software required to test the hypotheses.
-- Development of software required to test the hypotheses
-- Testing the hypotheses.
+~~Once the core activities are defined, the next step is to identify all supporting activities associated with the core activities. This should include:~~
 
-The scope of the supporting activities will most likely far exceed the scope of the core activities. Their coverage of the project will depend on the number of core activities identified. Ideally, for a new product or service, the core and supporting activities will cover the development of a prototype, or beta version, that can be used to test the overall innovation identified in the R&D plan.
+~~- R&D planning~~
+~~- Research and knowledge sourcing activities~~
+~~- Training and learning activities for new skills directly needed to develop the software required to test the hypotheses.~~
+~~- Development of software required to test the hypotheses~~
+~~- Testing the hypotheses.~~
 
-# Record keeping
+~~The scope of the supporting activities will most likely far exceed the scope of the core activities. Their coverage of the project will depend on the number of core activities identified. Ideally, for a new product or service, the core and supporting activities will cover the development of a prototype, or beta version, that can be used to test the overall innovation identified in the R&D plan.~~
 
-AusIndustry expects firms to keep records which demonstrate the R&D eligibility of core and supporting activities[^16]. In addition to emails and design documentation, for our current R&D at Xilytix, we are keeping the following R&D specific records:
+~~# Record keeping~~
 
-1. **R&D Plan**\
-   To identify the new (in context) knowledge and innovations being sought and describe the structured approach to generating these.
-1. **Test documentation for core activity hypotheses**\
-   To demonstrate the systematic approach to confirming the hypotheses associated with core activities
-1. **Internet browsing history**\
-   To demonstrate internal research undertaken to find innovation and confirm that the sought new knowledge and innovations do not already exist elsewhere. Note that this information is conveniently stored in web browsers. It can be exported with tools such as [BrowsingHistoryView](https://www.nirsoft.net/utils/browsing_history_view.html). (Make sure it is not cleared before exporting.)
-1. **External Knowledge Sourcing**\
-   Records of communications and/or visits with external knowledge sources and all agreements relating to external knowledge sourcing.
-1. **Timesheets and diary**\
-   It is important for all staff to record time spent on core and supporting activities. In addition, it is also helpful for staff members to include notes describing the nature of work carried out in the time spent. It is highly desirable for these times to be recorded frequently - ideally daily - as AusIndustry expects contemporaneous records. There are many online timesheet applications which can be used for this task. However at Xilytix we ended up choosing [YouTrack](https://www.jetbrains.com/youtrack/). While this is primarily an issue tracking application, by treating issues as activities we found it an ideal solution for our time spent recording.
+~~AusIndustry expects firms to keep records which demonstrate the R&D eligibility of core and supporting activities[^16]. In addition to emails and design documentation, for our current R&D at Xilytix, we are keeping the following R&D specific records:~~
 
-# Summary
+~~1. **R&D Plan**\~~
+~~   To identify the new (in context) knowledge and innovations being sought and describe the structured approach to generating these.~~
+~~1. **Test documentation for core activity hypotheses**\~~
+~~   To demonstrate the systematic approach to confirming the hypotheses associated with core activities~~
+~~1. **Internet browsing history**\~~
+~~   To demonstrate internal research undertaken to find innovation and confirm that the sought new knowledge and innovations do not already exist elsewhere. Note that this information is conveniently stored in web browsers. It can be exported with tools such as [BrowsingHistoryView](https://www.nirsoft.net/utils/browsing_history_view.html). (Make sure it is not cleared before exporting.)~~
+~~1. **External Knowledge Sourcing**\~~
+~~   Records of communications and/or visits with external knowledge sources and all agreements relating to external knowledge sourcing.~~
+~~1. **Timesheets and diary**\~~
+~~   It is important for all staff to record time spent on core and supporting activities. In addition, it is also helpful for staff members to include notes describing the nature of work carried out in the time spent. It is highly desirable for these times to be recorded frequently - ideally daily - as AusIndustry expects contemporaneous records. There are many online timesheet applications which can be used for this task. However at Xilytix we ended up choosing [YouTrack](https://www.jetbrains.com/youtrack/). While this is primarily an issue tracking application, by treating issues as activities we found it an ideal solution for our time spent recording.~~
 
-In summary, my view on how to carry out R&D within a software project which both, makes sense to the software team and, (hopefully) will also be acceptable for an R&D subsidy in Australia is:
+~~# Summary~~
 
-1. Learn the fundamentals of R&D.
-1. Write a R&D plan with the involvement of the development team which describes the overall innovation and knowledge sourcing and training needed as for the project.
-1. Identify core activities by reviewing architecture and design for new (within context) knowledge and searching for supplemental innovations.
-1. Create hypotheses for the core activities and map corresponding experiment, observation, evaluation, conclusion onto software test activities. Ensure these are well documented.
-1. Ensure that the core and resultant supporting activities reasonably scope the project (through to prototype/beta).
-1. Record knowledge sourcing activities. Using browser history is a convenient way of recording research carried out on the internet.
-1. Use a timesheet application which allows all members to record time spent on individual core and supporting activities. Encourage members to update this frequently and include diary notes on what was done daily.
+~~In summary, my view on how to carry out R&D within a software project which both, makes sense to the software team and, (hopefully) will also be acceptable for an R&D subsidy in Australia is:~~
 
-The documentation from the above steps should contain most of the information needed to generate an R&D Tax incentive application and hopefully be sufficient to justify the application if an audit arises. It may be helpful to get a R&D consultant to assist with the above steps. To properly gain the benefits of R&D, it is important that R&D consultants only assist and not do it on your behalf.
+~~1. Learn the fundamentals of R&D.~~
+~~1. Write a R&D plan with the involvement of the development team which describes the overall innovation and knowledge sourcing and training needed as for the project.~~
+~~1. Identify core activities by reviewing architecture and design for new (within context) knowledge and searching for supplemental innovations.~~
+~~1. Create hypotheses for the core activities and map corresponding experiment, observation, evaluation, conclusion onto software test activities. Ensure these are well documented.~~
+~~1. Ensure that the core and resultant supporting activities reasonably scope the project (through to prototype/beta).~~
+~~1. Record knowledge sourcing activities. Using browser history is a convenient way of recording research carried out on the internet.~~
+~~1. Use a timesheet application which allows all members to record time spent on individual core and supporting activities. Encourage members to update this frequently and include diary notes on what was done daily.~~
 
-Is the above approach “gaming the system”? I don’t think so. It may not exactly meet AusIndustry’s eligibility requirements but I believe it meets its purpose and intent. It is important to remember that the ultimate purpose of the subsidy is to encourage firms to generate creative destruction - not new knowledge. The aim of the subsidies is to assist firms with:
+~~The documentation from the above steps should contain most of the information needed to generate an R&D Tax incentive application and hopefully be sufficient to justify the application if an audit arises. It may be helpful to get a R&D consultant to assist with the above steps. To properly gain the benefits of R&D, it is important that R&D consultants only assist and not do it on your behalf.~~
 
-- developing R&D skills such as knowledge sourcing which they can combine with their internal expertise, creativity and knowledge of markets to identify and create innovation that leads to creative destruction, (behaviour additionality)
-- funding to provide confidence to invest in and proceed with high risk innovation R&D projects involving experimentation and complex development. (input additionality)
+~~Is the above approach “gaming the system”? I don’t think so. It may not exactly meet AusIndustry’s eligibility requirements but I believe it meets its purpose and intent. It is important to remember that the ultimate purpose of the subsidy is to encourage firms to generate creative destruction - not new knowledge. The aim of the subsidies is to assist firms with:~~
 
-The above is best achieved if R&D can be integrated into a firm’s processes in a manner which makes sense to firm’s staff and project team members. Only then can a R&D ethos and culture grow within a firm.
+~~- developing R&D skills such as knowledge sourcing which they can combine with their internal expertise, creativity and knowledge of markets to identify and create innovation that leads to creative destruction, (behaviour additionality)~~
+~~- funding to provide confidence to invest in and proceed with high risk innovation R&D projects involving experimentation and complex development. (input additionality)~~
 
-# Just a hypothesis
+~~The above is best achieved if R&D can be integrated into a firm’s processes in a manner which makes sense to firm’s staff and project team members. Only then can a R&D ethos and culture grow within a firm.~~
 
-If this article, was trying to sell you something, I’d finish off with Caveat Emptor. However I’m not! I am just looking for a R&D framework that makes sense to me, feels right for Xilytix and hopefully will be accepted by AusIndustry and ATO as a way of undertaking R&D as part of a Tax Incentive application.
+~~# Just a hypothesis~~
 
-Please note that, in respect to this framework, I have had no interaction with these government agencies and in no way should anyone infer that they in anyway approve of this approach. In some ways, this is a (possibly expensive) R&D Tax Incentive experiment:
+~~If this article, was trying to sell you something, I’d finish off with Caveat Emptor. However I’m not! I am just looking for a R&D framework that makes sense to me, feels right for Xilytix and hopefully will be accepted by AusIndustry and ATO as a way of undertaking R&D as part of a Tax Incentive application.~~
 
-- **Hypothesis**: AusIndustry and ATO will accept a R&D Tax Incentive application for innovative software projects which undertake R&D as described above.
-- **Experiment**: Use the above R&D framework for a software project and submit a R&D Tax Incentive application which is based around this framework.
-- **Observation**: See if the application is accepted or if we are audited!
+~~Please note that, in respect to this framework, I have had no interaction with these government agencies and in no way should anyone infer that they in anyway approve of this approach. In some ways, this is a (possibly expensive) R&D Tax Incentive experiment:~~
 
-I will follow up with another article to report any observations. However any feedback - especially related to organising R&D and/or how to best submit applications for R&D subsidies - would be greatly appreciated.
+~~- **Hypothesis**: AusIndustry and ATO will accept a R&D Tax Incentive application for innovative software projects which undertake R&D as described above.~~
+~~- **Experiment**: Use the above R&D framework for a software project and submit a R&D Tax Incentive application which is based around this framework.~~
+~~- **Observation**: See if the application is accepted or if we are audited!~~
+
+~~I will follow up with another article to report any observations. However any feedback - especially related to organising R&D and/or how to best submit applications for R&D subsidies - would be greatly appreciated.~~
 
 © Paul Klink 2024: No AI Training[^17]
 
