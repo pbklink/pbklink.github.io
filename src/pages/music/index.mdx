@@ -4,14 +4,13 @@ title: Music
 ---
 
 import Link from '@components/Link.astro';
+import * as contactPage from '../contact.mdx';
+import * as followYourDreamsPage from './follow-your-dreams/index.mdx';
 import * as montagePage from './montage/index.mdx';
 import * as playListPage from './play-list/index.md';
-import * as sailorJimPage from './sailor-jim.md';
-import * as followYourDreamsPage from './follow-your-dreams/index.mdx';
+import * as sailorJimPage from './sailor-jim.mdx';
 
-A long time ago I played in a band called <Link url={montagePage.url} text="Montage" />.
-
-My compositions:
+## My compositions:
 
 - <Link
     url={followYourDreamsPage.url}
@@ -21,3 +20,21 @@ My compositions:
     url={sailorJimPage.url}
     text="Sailor Jim"
   />
+
+### Licensing
+These songs are available for licensing. For more information, please contact:
+
+- <Link
+    url="https://onemusic.com.au"
+    text="One Music Australia"
+  /> for sound recordings and music videos (public performance)
+- <Link
+    url="https://www.ppca.com.au"
+    text="Phonographic Performance Company of Australia (PPCA)"
+  /> for sound recordings and music videos (communication)
+- For other types of licensing not covered by the above (eg. synchronization, compilation, etc.), please <Link url={contactPage.url} text="contact" /> me directly.
+
+My full **Direct Licensing Policy** is available <Link url="/files/music/paul-klink-music-direct-licensing-policy.pdf" text="here" />.
+
+## Montage
+A long time ago I played in a band called <Link url={montagePage.url} text="Montage" />.
