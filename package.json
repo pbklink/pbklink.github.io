@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/mdx": "^7.0.7",
     "@astrojs/sitemap": "^3.2.1",
     "@pbkware/astro-main-menu": "^4.0.0",
-    "astro": "^5.15.3",
+    "astro": "^7.2.4",
     "sass": "^1.97.2"
   },
   "devDependencies": {
