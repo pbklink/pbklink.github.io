@@ -115,6 +115,19 @@ const narrowHeading = 'Paul Klink';
     padding: 0 1rem;
     line-height: 1.5;
 
+    :global(blockquote) {
+      margin: 1.25rem 0;
+      padding: 0.75rem 1.25rem;
+      border-left: 0.3rem solid #0f766e;
+      background-color: #e2f3ef;
+      color: #164e4a;
+      font-style: italic;
+
+      :global(p) {
+        margin: 0.35em 0;
+      }
+    }
+
     /* Table */
     table {
       display: block;
